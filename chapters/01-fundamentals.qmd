@@ -1,0 +1,30 @@
+# Fundamentals
+
+## Goals
+
+- Understand the embedded software problem space
+- Identify common constraints: memory, timing, power, reliability
+- Set a baseline architecture for maintainable firmware
+
+## Example listing
+
+```c
+// code/gpio_blink.c
+#include <stdint.h>
+
+volatile uint32_t * const GPIO_OUT = (uint32_t *)0x50000000;
+
+void blink_once(void) {
+    *GPIO_OUT ^= (1u << 25);
+}
+```
+
+## Figure reference
+
+See @fig-architecture for a high-level system view.
+
+::: {#fig-architecture}
+![](../figures/architecture.svg){width=80%}
+
+A typical embedded firmware architecture.
+:::

@@ -1,0 +1,7 @@
+# Preface {.unnumbered}
+
+Welcome to *Gentle Introduction to Embedded Software with microCI*.
+
+This book focuses on practical embedded development: firmware structure, toolchains, peripherals, timing, and testing.
+
+Use the chapters to build a maintainable embedded workflow from first principles to continuous integration.
