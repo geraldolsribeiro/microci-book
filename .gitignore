@@ -1,2 +1,6 @@
 _book/
 .quarto/
+*.log
+*.aux
+*.toc
+*.synctex.gz
