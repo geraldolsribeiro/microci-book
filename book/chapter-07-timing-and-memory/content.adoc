@@ -1,5 +1,5 @@
-# Timing and Memory
+= Timing and Memory
 
-## What goes here
+== What goes here
 
 Cover stack, heap, RAM/flash usage, real-time constraints, and profiling.

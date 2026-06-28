@@ -1,8 +1,9 @@
-# Starter Embedded Examples
+= Starter Embedded Examples
 
-## GPIO blink
+== GPIO blink
 
-```c
+[source,c]
+----
 // code/gpio_blink.c
 #include <stdint.h>
 
@@ -11,11 +12,12 @@ volatile uint32_t * const GPIO_OUT = (uint32_t *)0x50000000;
 void blink_once(void) {
     *GPIO_OUT ^= (1u << 25);
 }
-```
+----
 
-## UART transmit
+== UART transmit
 
-```c
+[source,c]
+----
 // code/uart_tx.c
 #include <stddef.h>
 #include <stdint.h>
@@ -27,11 +29,12 @@ void uart_send_buffer(const uint8_t *buf, size_t len) {
         uart_send_byte(buf[i]);
     }
 }
-```
+----
 
-## Interrupt handler
+== Interrupt handler
 
-```c
+[source,c]
+----
 // code/isr_timer.c
 #include <stdint.h>
 
@@ -40,4 +43,4 @@ volatile uint32_t tick_count;
 void TIM0_IRQHandler(void) {
     tick_count++;
 }
-```
+----

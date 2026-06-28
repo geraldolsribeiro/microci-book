@@ -1,17 +1,14 @@
-QUARTO ?= quarto
-
-all: render
-
-preview:
-	$(QUARTO) preview --host 0.0.0.0
-
-render:
-	$(QUARTO) render
+all:
+	docker run --rm -v $(shell pwd):/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf \
+    -D _book book/index.adoc
 
 clean:
-	rm -rf _book .quarto
+	rm -rf _book
 
-# rsvg-convert
-# lualatex
-deps:
-	sudo apt install -y librsvg2-bin texlive-latex-base texlive-luatex texlive-latex-recommended texlive-latex-extra
+book/images/%.png: book/images/%.webp
+	convert $< png:- | pngquant --quality=65-80 --speed 1 - > $@
+
+# pngquant --quality=65-80 --speed 1 --ext -compressed.png cover.png
+
+local-deps:
+	sudo apt install asciidoctor ruby-asciidoctor-pdf

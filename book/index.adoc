@@ -1,0 +1,47 @@
+[separator=::]
+= Gentle Introduction to Embedded Software with microCI
+:author: Geraldo Ribeiro
+:creator: {author}
+:email: geraldolsribeiro@gmail.com
+:revnumber: v0.1.0
+:revremark: First draft
+:doctype: book
+:front-cover-image: image:cover.png[]
+// :front-cover-image: image:cover.png[width=1700,height=2800]
+// 1054 x 1492
+:sectnums:
+:sectlinks:
+:toc: left
+:toclevels: 4
+:toc-title: Table of Contents
+:description: HTML meta tag content for description
+:keywords: HTML meta tag content for keywords
+:icons: font
+:pdf-themesdir: {docdir}/themes
+:pdf-fontsdir: {docdir}/fonts
+:pdf-theme: basic
+:pdfmark: true
+:imagesdir: ./images
+:xrefstyle: short
+:source-highlighter: pygments
+:pygments-style: vs
+:pygments-linenums-mode: table
+:source-language: javascript
+
+
+include::preface.adoc[]
+include::foreword.adoc[]
+include::intro.adoc[]
+
+include::chapter-01-fundamentals/content.adoc[]
+include::chapter-02-toolchain/content.adoc[]
+include::chapter-03-build-system/content.adoc[]
+include::chapter-04-firmware-architecture/content.adoc[]
+include::chapter-05-communication-protocols/content.adoc[]
+include::chapter-05-peripherals/content.adoc[]
+include::chapter-06-interrupts/content.adoc[]
+include::chapter-07-timing-and-memory/content.adoc[]
+include::chapter-08-testing-and-ci/content.adoc[]
+include::chapter-09-code-conventions/content.adoc[]
+include::chapter-10-naming-conventions/content.adoc[]
+include::chapter-11-starter-embedded-examples/content.adoc[]

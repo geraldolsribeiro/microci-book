@@ -1,5 +1,5 @@
-# Peripherals
+= Peripherals
 
-## What goes here
+== What goes here
 
 Cover GPIO, UART, SPI, I2C, timers, ADC, and DMA.

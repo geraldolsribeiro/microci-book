@@ -1,5 +1,5 @@
-# Interrupts
+= Interrupts
 
-## What goes here
+== What goes here
 
 Explain interrupt handlers, priorities, latency, and shared state.

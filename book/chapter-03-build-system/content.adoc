@@ -1,5 +1,5 @@
-# Build System
+= Build System
 
-## What goes here
+== What goes here
 
 Explain how the project is built, configured, and reproduced in CI.
