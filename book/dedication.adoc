@@ -1,0 +1,6 @@
+[dedication]
+= Dedication
+
+To my lovely wife, Flavia, whose patience and kindness gave this work room to grow,
+and whose support carried me through every step of this journey.
+I am deeply grateful for her love and understanding.

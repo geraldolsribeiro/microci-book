@@ -1,5 +1,0 @@
-= Firmware Architecture
-
-== What goes here
-
-Discuss layered design, drivers, application logic, and hardware abstraction.

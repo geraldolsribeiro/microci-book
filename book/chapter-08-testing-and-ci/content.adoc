@@ -1,5 +1,0 @@
-= Testing and CI
-
-== What goes here
-
-Describe unit tests, hardware-in-the-loop tests, and microCI workflows.

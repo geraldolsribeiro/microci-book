@@ -1,0 +1,23 @@
+[chapter]
+== The Raspberry Pi Pico Platform
+
+The Raspberry Pi Pico family is the platform used throughout this book.
+It gives us a practical, low-cost target for the examples without making the hardware the main subject.
+
+The family used here includes:
+
+* Raspberry Pi Pico
+* Raspberry Pi Pico W
+* Raspberry Pi Pico 2
+* Raspberry Pi Pico 2 W
+
+[[fig-pico-types]]
+.The four Raspberry Pi Pico board variants used across the examples.
+image::raspberry_pico_types.png[alt="Raspberry Pi Pico board variants",width=90%]
+
+Depending on the model, Pico boards use either the *RP2040* or the newer *RP2350* microcontroller.
+They provide GPIO, serial interfaces, timers, interrupts, and USB support for the examples in this book.
+
+Wireless variants add connectivity for network-enabled examples.
+MicroCI currently supports this Pico family, and the same workflow can later be extended to other boards and ecosystems.
+

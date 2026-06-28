@@ -1,4 +1,4 @@
-= Summary
+== Summary
 
 This book introduced embedded software development using the Raspberry Pi Pico family and the microCI workflow.
 

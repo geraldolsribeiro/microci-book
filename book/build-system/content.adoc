@@ -1,0 +1,5 @@
+== Build System
+
+=== What goes here
+
+Explain how the project is built, configured, and reproduced in CI.

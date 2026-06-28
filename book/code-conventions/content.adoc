@@ -1,0 +1,47 @@
+== Code and Listing Conventions
+
+=== Goals
+
+Keep code examples:
+
+* small
+* buildable when practical
+* copy/paste friendly
+* consistent across the book
+
+=== Recommended style
+
+* Put reusable source in `code/`
+* Reference files from prose instead of duplicating large snippets
+* Use fenced code blocks for short examples
+* Add file comments at the top of snippets when useful
+* Prefer one concept per listing
+
+=== Listing examples
+
+[source,c]
+----
+// code/gpio_blink.c
+#include <stdint.h>
+
+volatile uint32_t * const GPIO_OUT = (uint32_t *)0x50000000;
+
+void blink_once(void) {
+    *GPIO_OUT ^= (1u << 25);
+}
+----
+
+[source,text]
+----
+// code/linker_script.ld
+SECTIONS
+{
+  .text : { *(.text*) }
+}
+----
+
+=== Diagram files
+
+* Use SVG when possible
+* Use text-based diagrams for easy diffs
+* Keep source files alongside exported images when practical

@@ -1,13 +1,12 @@
 [preface]
-= Our Preface
+= Preface
 
-Welcome to *Gentle Introduction to Embedded Software with microCI*.
+This book is a practical guide to modern embedded software development, aided by microCI.
 
-This book focuses on practical embedded development: firmware structure, toolchains, peripherals, timing, and testing.
+It focuses on the ideas and practices that matter across embedded projects: firmware structure, toolchains, peripherals, timing, testing, and the habits that make systems easier to maintain over time.
 
-Use the chapter-to build a maintainable embedded workflow from first principles to continuous integration.
+microCI is part of the story because it helps make the workflow reproducible and scalable, from early bring-up to more complete development and testing pipelines.
 
+The Raspberry Pi Pico family is the platform used throughout the examples so the reader can move from basic bring-up to more complete workflows without changing the core hardware.
 
-== Preface Subsection
-
-This is a preface subsection
+The main examples use modern C++, with MicroPython appearing where it helps clarify a concept or shorten an example.

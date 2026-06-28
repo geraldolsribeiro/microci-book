@@ -1,0 +1,12 @@
+[chapter]
+== microCI Workflow
+
+microCI is the workflow companion for this book.
+It helps automate the steps around the code: build, test, and firmware preparation.
+
+In this book, microCI supports:
+
+* firmware builds
+* checks and tests
+* hardware-ready artifacts
+* version-controlled workflows
