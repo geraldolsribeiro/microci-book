@@ -12,6 +12,7 @@ book:
     - chapters/02-toolchain.qmd
     - chapters/03-build-system.qmd
     - chapters/04-firmware-architecture.qmd
+    - chapters/05-communication-protocols.qmd
     - chapters/05-peripherals.qmd
     - chapters/06-interrupts.qmd
     - chapters/07-timing-and-memory.qmd

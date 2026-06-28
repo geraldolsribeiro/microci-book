@@ -1,0 +1,71 @@
+# Communication Protocols
+
+Embedded systems rarely operate in isolation. They exchange data with sensors, actuators, other microcontrollers, host tools, and network services through communication protocols.
+
+This chapter introduces the most common protocols used in embedded software and explains how to choose the right one for a given task.
+
+The chapter follows a progression from simple point-to-point links to more structured shared and networked communication:
+
+- UART
+- SPI
+- I²C
+- OneWire
+- CAN
+- Ethernet
+
+Each protocol introduces one new idea and builds on the previous ones:
+
+- UART introduces asynchronous communication.
+- SPI introduces clocked communication.
+- I²C introduces shared buses and addressing.
+- OneWire introduces timing-sensitive protocols.
+- CAN introduces arbitration and fault tolerance.
+- Ethernet introduces network stacks and packet routing.
+
+## What you will learn
+
+- the difference between synchronous and asynchronous communication
+- when to use UART, I2C, SPI, USB, and wireless links
+- how protocol choice affects wiring, speed, complexity, and reliability
+- how communication layers fit into embedded firmware architecture
+
+## Common protocols
+
+### UART
+
+UART is a simple asynchronous serial protocol often used for debugging, logging, bootloaders, and host communication.
+
+### SPI
+
+SPI is a fast clocked bus used for displays, flash memory, ADCs, and other high-throughput peripherals.
+
+### I2C
+
+I2C is a shared two-wire bus commonly used for sensors, RTCs, and configuration devices.
+
+### OneWire
+
+OneWire is a timing-sensitive protocol that trades wiring simplicity for tighter software control.
+
+### CAN
+
+CAN is a robust multi-node bus designed for arbitration and fault tolerance.
+
+### Ethernet
+
+Ethernet connects embedded devices to network stacks and packet-switched communication.
+
+## Choosing a protocol
+
+Choose a protocol based on:
+
+- number of wires
+- bandwidth
+- device count
+- software complexity
+- power usage
+- debug convenience
+
+## Next steps
+
+Later chapters show how these protocols are implemented in real firmware and how they are tested with microCI.
