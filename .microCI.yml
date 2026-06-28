@@ -1,0 +1,22 @@
+steps:
+  - name: "Generate HTML from Asciidoc"
+    description: "Description of this step"
+    plugin:
+      name: asciidoc
+      output_format: html
+      destination_dir: _book
+      output: Gentle_Introduction_to_Embedded_Software_with_microCI.html
+      input:
+        - book/index.adoc
+
+  - name: "Generate PDF from Asciidoc"
+    description: "Description of this step"
+    plugin:
+      name: asciidoc
+      output_format: pdf
+      destination_dir: _book
+      output: Gentle_Introduction_to_Embedded_Software_with_microCI.pdf
+      input:
+        - book/index.adoc
+
+# vim: spell spelllang=pt,en

@@ -1,9 +1,6 @@
-_book/
-.quarto/
 *.log
 *.aux
 *.toc
 *.synctex.gz
-
-/.quarto/
-**/*.quarto_ipynb
+.microCI.dbg
+_book
