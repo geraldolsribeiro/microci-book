@@ -4,3 +4,6 @@ _book/
 *.aux
 *.toc
 *.synctex.gz
+
+/.quarto/
+**/*.quarto_ipynb

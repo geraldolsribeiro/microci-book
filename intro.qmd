@@ -12,7 +12,7 @@ The Pico family used in this book includes:
 - Raspberry Pi Pico 2 W
 
 ::: {#fig-pico-types}
-![](figures/raspberry_pico_types.webp){width=90%}
+![](figures/raspberry_pico_types.png){width=90%}
 
 The four Raspberry Pi Pico board variants used across the examples.
 :::
