@@ -4,7 +4,7 @@
 
 A practical embedded software book powered by microCI.
 
-![Book cover](book/images/cover-readme.png)
+![Book cover](book/images/cover.png)
 
 This living book follows the development of microCI and uses the Raspberry Pi Pico family as its reference platform. It is designed to show how embedded software is built in practice: through real boards, real code, and a workflow that can stay maintainable as a project grows.
 
