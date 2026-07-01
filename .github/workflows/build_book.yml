@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run microCI
         run: |
@@ -20,8 +20,19 @@ jobs:
           ./microCI | bash
 
       - name: Save Multiple Outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: multi-artifact
           path: |
             _book/Gentle_Introduction_to_Embedded_Software_with_microCI.pdf
+
+      - name: 'Pre-Release'
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Latest"
+          files: |
+            _book/Gentle_Introduction_to_Embedded_Software_with_microCI.pdf
+            LICENSE
