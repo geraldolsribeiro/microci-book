@@ -1,0 +1,27 @@
+name: Execute microCI pipeline
+
+on: [push]
+
+jobs:
+  execute-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run microCI
+        run: |
+          curl -fsSL github.com/geraldolsribeiro/microci/releases/download/latest/microCI -o microCI
+          chmod 755 ./microCI
+          mkdir -p ~/.ssh/
+          touch ~/.ssh/config
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N "" -q
+          ./microCI | bash
+
+      - name: Save Multiple Outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: multi-artifact
+          path: |
+            _book/Gentle_Introduction_to_Embedded_Software_with_microCI.pdf
