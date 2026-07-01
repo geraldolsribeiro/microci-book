@@ -5,6 +5,8 @@ on: [push]
 jobs:
   execute-docker:
     runs-on: ubuntu-latest
+    container:
+      image: debian:trixie-slim
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
