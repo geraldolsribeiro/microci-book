@@ -2,14 +2,22 @@ name: Execute microCI pipeline
 
 on: [push]
 
+permissions:
+  contents: write
+
 jobs:
   execute-docker:
     runs-on: ubuntu-latest
-    container:
-      image: debian:trixie-slim
+#    container:
+#      image: debian:trixie-slim
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
+
+      # - name: Install prerequisites
+      #   run: |
+      #     apt-get update
+      #     apt-get install -y --no-install-recommends curl ca-certificates openssh-client
 
       - name: Run microCI
         run: |
@@ -29,12 +37,13 @@ jobs:
             _book/Gentle_Introduction_to_Embedded_Software_with_microCI.pdf
 
       - name: 'Pre-Release'
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          tag_name: latest
           prerelease: true
-          title: "Latest"
+          name: Latest
           files: |
             _book/Gentle_Introduction_to_Embedded_Software_with_microCI.pdf
             LICENSE
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
