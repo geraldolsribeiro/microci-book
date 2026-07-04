@@ -14,6 +14,7 @@ GIFS=$(TAPES:.tape=.gif)
 
 .PHONY: all
 all: $(GIFS)
+	cp *.png ../images/
 
 # .PHONY: upload
 # upload:

@@ -7,7 +7,6 @@ On the Pico 2 W, for example, the LED is routed through the wireless chip instea
 
 For that reason, the examples in this section keep the same structure while adapting the pin selection for each board.
 
-
 // * PICO_DEFAULT_LED_PIN
 // * CYW43_WL_GPIO_LED_PIN
 // * PICO_DEFAULT_WS2812_PIN
@@ -18,14 +17,26 @@ For this example you need the following files:
 * `CMakeLists.txt` - Configuration file used by the CMake meta-build system
 * `.microCI.yml` - Pipeline
 
-Once you have these three files in a folder execute:
+Once you have these three files in a folder just execute:
 
 [,shell]
 ----
 microCI | bash
 ----
 
-==== RP2040
+.Building the example with microCI.
+image::example_blink_rp2040.png[]
+
+==== Blink for RP2040
+
+===== .microCI.yml
+
+In `.microCI.yml`, use `pico` as the `board` value and `raspberry_pico` as plugin's `name`.
+
+[source,yaml]
+----
+include::../examples/blink_rp2040/.microCI.yml[]
+----
 
 ===== blink_simple.c
 
@@ -41,15 +52,19 @@ include::../examples/blink_rp2040/blink_simple.c[]
 include::../examples/blink_rp2040/CMakeLists.txt[]
 ----
 
+
+
+
+==== Blink for P2350
+
+In `.microCI.yml`, use `pico2_w` as the `board` value and `raspberry_pico` as plugin's `name`.
+
 ===== .microCI.yml
 
 [source,yaml]
 ----
-include::../examples/blink_rp2040/.microCI.yml[]
+include::../examples/blink_rp2350/.microCI.yml[]
 ----
-
-
-==== RP2350
 
 ===== blink_simple.c
 
@@ -65,9 +80,3 @@ include::../examples/blink_rp2350/blink_simple.c[]
 include::../examples/blink_rp2350/CMakeLists.txt[]
 ----
 
-===== .microCI.yml
-
-[source,yaml]
-----
-include::../examples/blink_rp2350/.microCI.yml[]
-----

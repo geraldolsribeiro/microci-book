@@ -3,7 +3,7 @@ steps:
     docker: "intmain/microci_raspberry_pico:latest"
     plugin:
       name: raspberry_pico
-      board: pico2 # pico | pico_w | pico2 | pico2_w
+      board: pico # pico | pico_w | pico2 | pico2_w
       bash: |
         rm -rf build
         # Configure and generate the build files into a 'build' directory
