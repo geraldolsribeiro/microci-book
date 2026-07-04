@@ -5,3 +5,5 @@
 .microCI.dbg
 _book
 docs
+book/examples/blink_rp2040/build
+book/examples/blink_rp2350/build
