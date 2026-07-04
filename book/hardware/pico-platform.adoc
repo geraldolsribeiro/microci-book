@@ -1,0 +1,68 @@
+=== The Raspberry Pi Pico Platform
+
+The Raspberry Pi Pico family is the platform used throughout this book.
+It gives us a practical, low-cost target for the examples without making the hardware the main subject.
+
+[[fig-pico-types]]
+.The four Raspberry Pi Pico board variants used across the examples.
+image::raspberry_pico_types.png[alt="Raspberry Pi Pico board variants",width=90%]
+
+The family used here includes:
+
+* Raspberry Pi Pico
+* Raspberry Pi Pico W
+* Raspberry Pi Pico 2
+* Raspberry Pi Pico 2 W
+
+These boards are small, affordable, and widely available, which makes them a good fit for learning, teaching, and repeatable experiments.
+They also remain capable enough to support real embedded work.
+Depending on the model, Pico boards use either the *RP2040* or the newer *RP2350* microcontroller.
+
+=== Board capabilities
+
+In practice, the Pico family offers the features needed for the examples in this book:
+
+* general-purpose I/O for LEDs, buttons, sensors, and control signals
+* serial interfaces such as UART, SPI, and I2C
+* timers and interrupts for real-time behavior
+* USB support for a simple development loop
+* enough memory and processing power for useful firmware projects
+
+=== RP2040 and RP2350
+
+The book uses two closely related microcontrollers: the RP2040 and the RP2350.
+Both fit the Pico philosophy: small enough to learn quickly, capable enough to build useful firmware.
+This comparison highlights how the newer RP2350 extends the same design idea rather than replacing it.
+It is included here to show what changes matter when the platform moves forward.
+
+.RP2040 and RP2350 at a glance
+[cols="1,1,1",options="header"]
+|===
+|Feature |RP2040 |RP2350
+|Processor cores |Dual-core ARM Cortex-M0+ |Dual-core ARM Cortex-M33 or dual-core Hazard3 RISC-V, depending on the variant
+|Clock speed |133 MHz |150 MHz
+|Floating-point unit |None; floating point is handled in software |Dedicated hardware single and double-precision FPU
+|On-chip SRAM |264 KiB |520 KiB
+|PIO state machines |8 total |12 total
+|Security / boot |No secure-boot features |Secure boot, encrypted bootloader, OTP
+|GPIO pins |30 |30 to 48, depending on the package variant
+|Sleep current |~1.3 mA |~1.5 mA to 2 mA
+|Typical Pico boards |Pico, Pico W |Pico 2, Pico 2 W
+|Peripheral set |GPIO, UART, SPI, I2C, timers, interrupts, USB 1.1 device controller, PIO |All RP2040 peripherals plus the newer RP2350 platform features
+|Book role |Foundation platform for core embedded concepts |Newer platform used to show the same concepts on updated hardware
+|===
+
+The RP2350 is the stronger choice for compute-heavy examples.
+Its Cortex-M33 cores and hardware FPU can make floating-point and complex math tasks up to 3× faster than the RP2040, and it can boot as either ARM or RISC-V depending on the variant.
+
+For I/O, the RP2350 expands PIO from 8 to 12 state machines and adds HSTX for high-speed display-oriented output such as DVI and DSI.
+
+For power-sensitive designs, the RP2040 still has the advantage.
+Its lower sleep and dormant current make it a better fit for ultra-low-power, long-life battery projects.
+
+The non-wireless boards are ideal for core firmware, timing, and peripheral work.
+The wireless variants add connectivity for network-enabled examples.
+
+This makes the Pico family a good teaching platform: the hardware is simple enough to understand quickly, but rich enough to expose the same ideas that appear in larger systems.
+MicroCI currently supports this Pico family, and the same workflow can later be extended to other boards and ecosystems.
+

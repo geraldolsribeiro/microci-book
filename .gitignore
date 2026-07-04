@@ -4,3 +4,4 @@
 *.synctex.gz
 .microCI.dbg
 _book
+docs

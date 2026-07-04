@@ -2,19 +2,27 @@
 = Introduction
 
 
-This book is for readers who want to understand embedded software by working with practical examples and a workflow that can grow with the project, with microCI helping to keep that workflow reproducible and maintainable.
+This book is for readers who want to understand embedded software through practical examples and a workflow that can grow with the project.
 
 The examples are written primarily in modern C++, with MicroPython used where it helps illustrate ideas more quickly or more clearly.
 
-Embedded software is built at the intersection of hardware constraints, software structure, and long-term maintainability.
+Embedded software lives at the intersection of hardware constraints, software structure, and long-term maintainability. microCI is part of that story: it keeps the workflow in plain text, turns it into Bash, and lets the same pipeline run in different places without changing the idea behind it.
+
+That matters because embedded projects rarely stay small. A team may begin with a local build and a board on the desk, then slowly add checks, automation, and delivery steps as the project grows. microCI is built for that journey.
+
+Its promise is simple:
+
+* define the workflow once
+* keep it visible
+* run it anywhere
+
+For embedded work, that becomes a practical advantage. The same pipeline can help build firmware, run checks, generate documentation, package artifacts, and prepare delivery for hardware targets. The process stays readable, versioned, and under control while the code evolves.
+
+microCI also reflects a larger idea: sovereignty. It is meant for teams that want ownership of their pipeline, their artifacts, and their execution environment.
 
 The Raspberry Pi Pico family is the platform used in the book, chosen because it is practical, accessible, and capable enough to support the examples without becoming the focus of the text.
 
-By the end of the book, readers should have a solid understanding of embedded software concepts and how microCI can help organize and automate the workflow around them.
-
-MicroCI currently supports this Pico family, and support for other platforms such as Arduino, ESP32, and additional targets can be added in future editions.
-
-By the end of this book, you should be able to:
+By the end of the book, readers should be able to:
 
 * organize embedded firmware into maintainable layers
 * configure and understand a cross-compilation toolchain
