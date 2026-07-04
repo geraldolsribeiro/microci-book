@@ -1,0 +1,40 @@
+=== UART
+
+UART (Universal Asynchronous Receiver/Transmitter) is one of the most common device-to-device communication protocols in embedded systems.
+It uses asynchronous serial communication, so the two ends do not share a clock line.
+Instead, they agree on the same baud rate and use that timing to exchange data correctly.
+
+A UART link normally uses two wires:
+
+* Tx for transmission
+* Rx for reception
+
+Because the interface is simple, UART is widely used for debugging, logs, manufacturing tests, board-to-board links, and device configuration.
+It reduces wiring and circuitry compared to many other communication methods, which also helps lower cost.
+
+A UART frame usually contains:
+
+* a start bit
+* a data field
+* an optional parity bit
+* one or more stop bits
+
+The start bit marks the beginning of the packet, the data field carries the payload, parity can be used for basic error detection, and the stop bit marks the end of the frame.
+The receiver samples the line at the configured baud rate, discards the framing bits, and reconstructs the transmitted byte.
+
+A key point is that UART is only the transport layer.
+The protocol used inside the payload is up to the designer.
+For that reason, many products define a custom frame format with headers, command fields, length, payload, trailers, and CRC.
+This makes the link easier to validate and helps ensure that the receiver is talking to the expected device.
+
+When implementing UART, the datasheet and reference manual matter.
+The developer should verify:
+
+* data width
+* parity mode
+* stop-bit configuration
+* baud-rate limits
+* register settings
+* the correct peripheral clock
+
+That discipline is what turns UART from a simple serial port into a reliable part of a product.

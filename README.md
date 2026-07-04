@@ -18,7 +18,7 @@ Future editions can expand to additional boards and ecosystems as microCI grows.
 
 Read the latest version of the book at:
 
-- http://microci.dev/
+- <https://github.com/geraldolsribeiro/microci-book/releases/download/latest/Gentle_Introduction_to_Embedded_Software_with_microCI.pdf>
 
 ## What you will learn
 

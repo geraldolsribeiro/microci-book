@@ -1,0 +1,10 @@
+== Security
+
+This part of the book covers the security-related features that appear in the newer Pico generation.
+The details will be expanded in later chapters.
+
+include::../secure-boot/content.adoc[]
+
+include::../encrypted-bootloader/content.adoc[]
+
+include::../otp/content.adoc[]

@@ -144,12 +144,15 @@ quote:
   padding: [3, 0, 3, 20]
 
 table:
-  caption-side: bottom
-  font:
-    size: 12
+  align: center
+
+# table:
+#  caption-side: bottom
+#  font:
+#    size: 10
 
 image:
-  width: 100%
+#  width: 100%
   align: center
   caption:
     end: bottom

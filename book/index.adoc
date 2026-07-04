@@ -26,22 +26,23 @@
 :pygments-linenums-mode: table
 :source-language: cpp
 
-
 include::dedication.adoc[]
-
-ifdef::backend-pdf[]
-<<<
-endif::backend-pdf[]
 
 include::preface.adoc[]
 
 include::intro.adoc[]
 
-include::microci-workflow.adoc[]
-
-include::pico-platform.adoc[]
-
 include::fundamentals/content.adoc[]
+
+include::hardware/content.adoc[]
+
+include::getting-started-with-firmware/content.adoc[]
+
+include::communication-protocols/content.adoc[]
+
+include::code-conventions/content.adoc[]
+
+include::naming-conventions/content.adoc[]
 
 include::toolchain/content.adoc[]
 
@@ -49,18 +50,13 @@ include::build-system/content.adoc[]
 
 include::firmware-architecture/content.adoc[]
 
-include::communication-protocols/content.adoc[]
-
 include::peripherals/content.adoc[]
 
 include::interrupts/content.adoc[]
 
 include::timing-and-memory/content.adoc[]
 
+
 include::testing-and-ci/content.adoc[]
 
-include::code-conventions/content.adoc[]
-
-include::naming-conventions/content.adoc[]
-
-include::starter-embedded-examples/content.adoc[]
+include::security/content.adoc[]
