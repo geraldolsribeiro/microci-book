@@ -1,27 +1,27 @@
 == Fundamentals
 
-=== Goals
+=== Understanding the problem space
 
-* Understand the embedded software problem space
-* Identify common constraints: memory, timing, power, reliability
-* Set a baseline architecture for maintainable firmware
+Embedded software is built under constraints that are always present, even when they are not obvious at first.
+The processor may be small, memory may be limited, timing may be strict, and power may matter from the first prototype.
+At the same time, the code must remain maintainable enough to grow into a real product.
 
-=== Example listing
+The problem space is therefore not just about writing code that works.
+It is about balancing hardware limits, system behavior, and long-term maintainability.
+That is why this book starts with the fundamentals before moving into tools, architecture, and communication.
 
-[source,c]
-----
-// code/gpio_blink.c
-#include <stdint.h>
+=== Common constraints
 
-volatile uint32_t * const GPIO_OUT = (uint32_t *)0x50000000;
+.Common constraints in embedded projects.
+[cols="1,5",options="header"]
+|===
+|Constraint|What it means
+|Memory|Defines what can be stored, allocated, and buffered. It affects stack size, heap use, data structures, and how much code the system can carry.
+|Timing|Defines when work can be done and how much jitter the system can tolerate. It affects interrupts, scheduling, and the order in which tasks must run.
+|Power|Defines how often the processor can run, how long the system can stay awake, and how long batteries last. It affects sleep modes, duty cycle, and peripheral use.
+|Reliability|Defines how the software reacts when signals fail, peripherals misbehave, or assumptions are violated. It affects error handling, timeouts, and recovery paths.
+|===
 
-void blink_once(void) {
-    *GPIO_OUT ^= (1u << 25);
-}
-----
+These constraints are not independent.
+A change that improves one area often affects another, so embedded software requires trade-offs instead of isolated decisions.
 
-=== Figure reference
-
-[[fig-architecture]]
-.A typical embedded firmware architecture.
-image::architecture.svg[alt="Embedded firmware architecture",width=80%]

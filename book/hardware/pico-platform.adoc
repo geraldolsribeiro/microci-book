@@ -36,7 +36,7 @@ This comparison highlights how the newer RP2350 extends the same design idea rat
 It is included here to show what changes matter when the platform moves forward.
 
 .RP2040 and RP2350 at a glance
-[cols="1,1,1",options="header"]
+[cols="1,2,2",options="header"]
 |===
 |Feature |RP2040 |RP2350
 |Processor cores |Dual-core ARM Cortex-M0+ |Dual-core ARM Cortex-M33 or dual-core Hazard3 RISC-V, depending on the variant

@@ -1,4 +1,4 @@
-=== GPIO blink
+=== LED blink
 
 The code structure is the same across boards, but the LED connection is not.
 The correct pin matters.

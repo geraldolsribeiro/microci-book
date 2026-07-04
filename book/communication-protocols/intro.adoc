@@ -1,0 +1,80 @@
+=== Introduction
+
+Embedded systems rarely operate in isolation.
+They exchange data with sensors, actuators, other microcontrollers, host tools, and network services through communication protocols.
+
+This chapter introduces the most common protocols used in embedded software and explains how to choose the right one for a given task.
+
+Each protocol introduces one new idea and builds on the previous ones:
+
+* UART introduces asynchronous communication.
+* SPI introduces clocked communication.
+* I²C introduces shared buses and addressing.
+* OneWire introduces timing-sensitive protocols.
+* CAN introduces arbitration and fault tolerance.
+* Ethernet introduces network stacks and packet routing.
+
+=== Common protocols
+
+[cols="1,2,2",options="header"]
+|===
+|Protocol |Main idea |Typical use
+|UART |Asynchronous serial link over Tx/Rx lines |Debugging, logging, bootloaders, host communication
+|SPI |Clocked full-duplex bus with a master and one or more slaves |Displays, flash memory, ADCs, fast peripherals
+|I²C |Shared two-wire addressed bus |Sensors, RTCs, configuration devices
+|OneWire |Timing-sensitive single-wire communication |Simple low-pin-count devices
+|CAN |Multi-node bus with arbitration and fault tolerance |Automotive and industrial networks
+|Ethernet |Packet-based network communication |Connected embedded systems and network stacks
+|===
+
+=== Protocol features
+
+==== Why asynchronous timing is useful
+
+The two sides do not share a clock line.
+Instead, they agree on a baud rate and use their own clocks to sample the line at the right moments.
+This keeps the wiring simple and makes the link easy to bring up.
+
+==== Why a shared clock improves transfer
+
+A dedicated clock line tells the receiver exactly when each bit is valid.
+That makes the link faster and more deterministic, but it also means more wires and stricter bus timing.
+
+==== Why addressing matters on a shared bus
+
+Multiple devices can use the same two wires when each one has a unique address.
+The master selects the target device by address, which reduces wiring while still allowing many peripherals on one bus.
+
+==== Why timing sensitivity matters
+
+Some links trade wiring simplicity for software precision.
+When the protocol depends on narrow timing windows, even small delays or jitter can break communication.
+
+==== Why arbitration and fault handling matter
+
+When several nodes can speak on the same bus, the protocol needs rules to decide who wins access.
+It also needs behavior that remains reliable in noisy or electrically difficult environments.
+
+==== Why network stacks extend communication
+
+At some point, communication is no longer just point-to-point.
+The system starts moving packets through layers, using routing and higher-level protocols to connect embedded devices to larger networks.
+
+=== What you will learn
+
+* the difference between synchronous and asynchronous communication
+* when to use UART, I2C, SPI, USB, and wireless links
+* how protocol choice affects wiring, speed, complexity, and reliability
+* how communication layers fit into embedded firmware architecture
+
+=== Choosing a protocol
+
+Choose a protocol based on:
+
+* number of wires
+* bandwidth
+* device count
+* software complexity
+* power usage
+* debug convenience
+

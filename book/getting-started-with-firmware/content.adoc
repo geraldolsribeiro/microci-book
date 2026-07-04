@@ -1,4 +1,4 @@
-== Starter Embedded Examples
+== Getting Started with Firmware
 
 The smallest example in this book is a blink program.
 It exercises the GPIO path from firmware to hardware without introducing unnecessary complexity.
