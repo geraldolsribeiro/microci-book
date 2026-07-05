@@ -35,6 +35,9 @@ Both fit the Pico philosophy: small enough to learn quickly, capable enough to b
 This comparison highlights how the newer RP2350 extends the same design idea rather than replacing it.
 It is included here to show what changes matter when the platform moves forward.
 
+.Raspberry Pi Pico chip identification
+image::RP2040_chip_id.png[pdfwidth=50%]
+
 .RP2040 and RP2350 at a glance
 [cols="1,2,2",options="header"]
 |===

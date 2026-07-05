@@ -1,0 +1,119 @@
+=== Logic analyser
+
+A logic analyzer is an electronic instrument that captures and displays
+multiple signals from a digital system or digital circuit. it comes in many
+sizes and features, depending on the needs. Logic Analyzer is very useful if
+you want to verify whether your digital system produces the correct signal,
+such as debugging serial connection.
+
+==== Cheap Logic Analyzer 24MHz 8 channels
+
+Chinese clone logic analyzers (based on the Cypress `CY7C68013A` chip) use the
+`fx2lafw` firmware, which is fundamentally a **USB 2.0** (High-Speed) device.
+
+[TIP]
+If your 8-channel Chinese logic analyzer (often a clone of Saleae Logic) is not
+detected, it is usually a USB driver issue, a conflict with USB 3.0 ports, or a
+need to flash the open-source firmware (fx2lafw) for software like PulseView.
+
+[[fig-logic-analyser-chinese]]
+.Chinese USB Logic Analyser
+image::chinese_logic_analyser_8bits.png[pdfwidth=50%]
+
+
+===== Installing PulseView from Sigrok
+
+Now we need software that uses the Logic Analyzer to read the signal, analyze,
+and display the signal for us. The software that I use is PulseView, which is
+open-source software for Logic Analyzer. It supports many models of Logic
+Analyzer including the Cheap logic analyzer that we are using.
+
+First, download the installer from http://sigrok.org/wiki/Downloads according
+to your operating system.
+
+
+===== Installing PulseView on Debian/Ubuntu
+
+[source,console]
+----
+$ sudo apt update
+$ sudo apt install sigrok-cli sigrok sigrok-firmware-fx2lafw 
+----
+
+===== Connecting to logic analyser
+
+After connecting the logic analyser device to the USB port, it can be listed via `lsbusb` command:
+
+[source,console]
+----
+$ lsusb 
+...
+Bus 001 Device 024: ID 214b:7250 Huasheng Electronics USB2.0 HUB
+Bus 001 Device 007: ID 0925:3881 Lakeview Research Saleae Logic
+----
+
+[TIP]
+They cannot connect via the USB 3.0 protocol.
+Use a USB 2.0 HUB to adapt to USB 3.0 if you don't have USB 2.0 port available.
+
+By using `sigrok-cli` you can detect the analyser:
+
+[source,console]
+----
+$ sigrok-cli --scan
+The following devices were found:
+demo - Demo device with 13 channels: D0 D1 D2 D3 D4 D5 D6 D7 A0 A1 A2 A3 A4
+fx2lafw - Saleae Logic with 8 channels: D0 D1 D2 D3 D4 D5 D6 D7
+----
+
+In the previous listing there are two devices:
+
+* `demo`: with 8 **D**igital ports, and 4 **A**nalogic ports
+* `fx2lafw`: with 8 **D**igital ports
+
+
+===== PulseView
+
+Launch **PulseView** via `pulseview` command:
+
+[[fig-pulseview_main_window]]
+.PulseView main window.
+image::pulseview_main_window.png[]
+
+In the main screen you can select the driver that matches your device.
+
+[[fig-pulseview_connect_device]]
+.Connecting digital analyser device.
+image::pulseview_connect_device_config.png[pdfwidth=50%]
+
+
+===== fx2lafw firmware
+
+`fx2lafw` is an open-source firmware for *Cypress FX2* chips which makes them
+usable as simple logic analyzer and/or oscilloscope hardware <<sigrok-fx2lafw>>.
+
+It is licensed under the terms of the GNU GPL (version 2, or later) and written
+in C, using `sdcc` as compiler, and `fx2lib` as helper library.
+
+//
+// sudo apt update
+// sudo apt install pulseview sigrok-firmware-fx2lafw
+//
+// root@dionisio:~# sigrok-cli --scan
+// The following devices were found:
+// demo - Demo device with 13 channels: D0 D1 D2 D3 D4 D5 D6 D7 A0 A1 A2 A3 A4
+// fx2lafw - Saleae Logic with 8 channels: D0 D1 D2 D3 D4 D5 D6 D7
+// root@dionisio:~# history | tail -5
+//  1433  lsusb 
+//  1434  lsusb -v
+//  1435  sudo apt install sigrok-cli sigrok sigrok-firmware-fx2lafw 
+//  1436  sigrok-cli --scan
+//  1437  history | tail -5
+// root@dionisio:~# 
+// logout
+// 👍  geraldo@dionisio  ~/Downloads/TM1637   
+// ❯ sigrok-cli --scan
+// The following devices were found:
+// demo - Demo device with 13 channels: D0 D1 D2 D3 D4 D5 D6 D7 A0 A1 A2 A3 A4
+// fx2lafw:conn=1.6 - Saleae Logic [S/N: Saleae Logic] with 8 channels: D0 D1 D2 D3 D4 D5 D6 D7
+//

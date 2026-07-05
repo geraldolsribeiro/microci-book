@@ -11,4 +11,11 @@ The same ideas scale.
 Once they are understood in a simple environment, they can be carried into larger projects, more complex boards, and stricter production workflows.
 Learning the pattern in the small gives the reader a way to recognize it in the large.
 
+Hardware list:
+
+* Raspberry Pico
+* Digital Analyser
+
 include::pico-platform.adoc[]
+
+include::logic-analyser.adoc[]
