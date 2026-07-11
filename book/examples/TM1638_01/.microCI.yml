@@ -24,5 +24,5 @@ steps:
     plugin:
       name: raspberry_pico
       bash: |
-        /opt/picotool/picotool load -fx build/TM3816.elf
-        # /opt/picotool/picotool load -fx build/TM3816.uf2
+        # /opt/picotool/picotool load -fx build/TM3816.elf
+        /opt/picotool/picotool load -fx build/TM3816.uf2

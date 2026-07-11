@@ -3,8 +3,6 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 
-// #include "pico/stdlib.h"
-
 // Pin Definitions
 #define PIN_STB 13
 #define PIN_CLK 15
@@ -24,9 +22,12 @@ void tm1638_send_byte(uint8_t byte) {
   gpio_set_dir(PIN_DIO, GPIO_OUT);
   for (int i = 0; i < 8; i++) {
     gpio_put(PIN_CLK, 0);
+    sleep_us(1); // Necessary timing anchor for 150MHz clocks
     gpio_put(PIN_DIO, byte & 1);
     byte >>= 1;
+    sleep_us(1);
     gpio_put(PIN_CLK, 1);
+    sleep_us(1);
   }
 }
 
@@ -34,10 +35,12 @@ void tm1638_send_byte(uint8_t byte) {
 uint8_t tm1638_read_byte() {
   uint8_t byte = 0;
   gpio_set_dir(PIN_DIO, GPIO_IN);
+  sleep_us(2); // Let the line settle after switching directions
   for (int i = 0; i < 8; i++) {
     gpio_put(PIN_CLK, 0);
     sleep_us(1); // Small delay for timing stability
     gpio_put(PIN_CLK, 1);
+    sleep_us(1);
     if (gpio_get(PIN_DIO)) {
       byte |= (1 << i);
     }
@@ -48,17 +51,21 @@ uint8_t tm1638_read_byte() {
 // Send a command to the TM1638
 void tm1638_send_cmd(uint8_t cmd) {
   gpio_put(PIN_STB, 0);
+  sleep_us(1);
   tm1638_send_byte(cmd);
   gpio_put(PIN_STB, 1);
+  sleep_us(1);
 }
 
 // Update a specific register address with data
 void tm1638_send_data(uint8_t addr, uint8_t data) {
   tm1638_send_cmd(CMD_DATA); // Set to write mode
   gpio_put(PIN_STB, 0);
+  sleep_us(1);
   tm1638_send_byte(CMD_ADDR | addr);
   tm1638_send_byte(data);
   gpio_put(PIN_STB, 1);
+  sleep_us(1);
 }
 
 // Initialize GPIO pins and the display
@@ -87,13 +94,16 @@ void tm1638_init() {
 uint8_t tm1638_read_keys() {
   uint8_t keys = 0;
   gpio_put(PIN_STB, 0);
-  tm1638_send_byte(0x42); // Command to read keys
+  sleep_us(1);
+  tm1638_send_byte(0x42); // Send data-read instruction
 
-  uint8_t segments[4];
+  // Corrected array allocation initialization
+  uint8_t segments[4] = {0, 0, 0, 0};
   for (int i = 0; i < 4; i++) {
     segments[i] = tm1638_read_byte();
   }
   gpio_put(PIN_STB, 1);
+  sleep_us(1);
 
   // Map the incoming byte matrix to a single 8-bit value
   for (int i = 0; i < 4; i++) {
@@ -113,39 +123,8 @@ void tm1638_set_leds(uint8_t mask) {
   }
 }
 
-int main2() {
-  stdio_init_all();
-  tm1638_init();
-
-  uint32_t counter = 0;
-
-  while (true) {
-    // Display a changing number across the digits
-    uint32_t temp = counter;
-    for (int i = 7; i >= 0; i--) {
-      uint8_t digit = temp % 10;
-      // Digit displays are at even addresses (0, 2, 4, 6, 8, 10, 12, 14)
-      tm1638_send_data(i * 2, FONT_MAP[digit]);
-      temp /= 10;
-    }
-
-    // Mirror button states onto the LEDs
-    uint8_t pressed_buttons = tm1638_read_keys();
-    tm1638_set_leds(pressed_buttons);
-
-    if (pressed_buttons > 0) {
-      printf("Buttons pressed bitmask: 0x%02X\n", pressed_buttons);
-    }
-
-    counter++;
-    sleep_ms(100);
-  }
-  return 0;
-}
-
 int main() {
   stdio_init_all();
-
   // Initialize the CYW43 architecture
   if (cyw43_arch_init()) {
     return -1;
@@ -154,14 +133,15 @@ int main() {
   tm1638_init();
 
   uint32_t counter = 0;
+
   while (true) {
     // Turn the LED on
     cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-    sleep_ms(100);
+    sleep_ms(1);
 
     // Turn the LED off
     cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
-    sleep_ms(500);
+    sleep_ms(1);
 
     // Display a changing number across the digits
     uint32_t temp = counter;
@@ -172,6 +152,11 @@ int main() {
       temp /= 10;
     }
 
+    uint8_t pressed_buttons = tm1638_read_keys();
+    tm1638_set_leds(pressed_buttons);
+
     counter++;
+    sleep_ms(1);
   }
+  return 0;
 }
