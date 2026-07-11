@@ -15,7 +15,10 @@ Hardware list:
 
 * Raspberry Pico
 * Digital Analyser
+* TM1638
 
 include::pico-platform.adoc[]
 
 include::logic-analyser.adoc[]
+
+include::TM1638.adoc[]
