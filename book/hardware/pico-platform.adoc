@@ -69,3 +69,16 @@ The wireless variants add connectivity for network-enabled examples.
 This makes the Pico family a good teaching platform: the hardware is simple enough to understand quickly, but rich enough to expose the same ideas that appear in larger systems.
 MicroCI currently supports this Pico family, and the same workflow can later be extended to other boards and ecosystems.
 
+=== Pinout
+
+.The pinout and board layout diagram of a non-wireless Raspberry Pi Pico board
+image::../images/pico-pinout.svg[pdfwidth=90%]
+
+.The pinout and board layout diagram of a non-wireless Raspberry Pi Pico 2 board
+image::../images/pico-2-r4-pinout.svg[pdfwidth=90%]
+
+.The pinout and board layout diagram of a wireless Raspberry Pi Pico board
+image::../images/picow-pinout.svg[pdfwidth=90%]
+
+.The pinout and board layout diagram of a wireless Raspberry Pi Pico 2 board[106;5u
+image::../images/pico2w-pinout.svg[pdfwidth=90%]
