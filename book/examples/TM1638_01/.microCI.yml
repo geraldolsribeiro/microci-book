@@ -1,0 +1,28 @@
+steps:
+  - name: "Build Raspberry Pi Pico firmware"
+    docker: "intmain/microci_raspberry_pico:latest"
+    plugin:
+      name: raspberry_pico
+      board: pico2_w # pico | pico_w | pico2 | pico2_w
+      bash: |
+        find /opt -name "gpio.h"
+        rm -rf build
+        # Configure and generate the build files into a 'build' directory
+        cmake -S . -B build
+        # Compile the project using the generated build files
+        cmake --build build
+
+  - name: "Load firmware"
+    docker: "intmain/microci_raspberry_pico:latest"
+    only: load
+    run_as: root
+    privileged: true
+    volumes:
+      - source: /dev/bus/usb
+        destination: /dev/bus/usb
+        mode: rw
+    plugin:
+      name: raspberry_pico
+      bash: |
+        /opt/picotool/picotool load -fx build/TM3816.elf
+        # /opt/picotool/picotool load -fx build/TM3816.uf2
