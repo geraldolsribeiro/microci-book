@@ -1,4 +1,4 @@
-# examples/blink_rp2350/.microCI.yml
+# examples/blink_rp2350_deploy/.microCI.yml
 steps:
   - name: "Build Raspberry Pi Pico firmware"
     docker: "intmain/microci_raspberry_pico:latest"
@@ -11,4 +11,18 @@ steps:
         cmake -S . -B build
         # Compile the project using the generated build files
         cmake --build build
+
+  - name: "Load firmware in BOOTSEL mode"
+    docker: "intmain/microci_raspberry_pico:latest"
+    only: load
+    run_as: root
+    privileged: true
+    volumes:
+      - source: /dev/bus/usb
+        destination: /dev/bus/usb
+        mode: rw
+    plugin:
+      name: raspberry_pico
+      bash: |
+        /opt/picotool/picotool load -xf build/blink_simple.uf2
 

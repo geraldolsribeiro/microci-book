@@ -11,7 +11,7 @@ For that reason, the examples in this section keep the same structure while adap
 // * CYW43_WL_GPIO_LED_PIN
 // * PICO_DEFAULT_WS2812_PIN
 
-For this example you need the following files:
+For this example you need the following files from `../examples/blink_rp2040/` or `../examples/blink_rp2350/` folders:
 
 * `blink_simple.c` - C source code
 * `CMakeLists.txt` - Configuration file used by the CMake meta-build system
@@ -27,9 +27,10 @@ microCI | bash
 .Building the example with microCI.
 image::example_blink_rp2040.png[]
 
-==== Blink for RP2040
+Below will be presented two version of the same project, one for Pico based on
+RP2040 microcontroller and another for RP2350.
 
-===== .microCI.yml
+==== .microCI.yml for RP2040
 
 In `.microCI.yml`, use `pico` as the `board` value and `raspberry_pico` as plugin's `name`.
 
@@ -38,14 +39,14 @@ In `.microCI.yml`, use `pico` as the `board` value and `raspberry_pico` as plugi
 include::../examples/blink_rp2040/.microCI.yml[]
 ----
 
-===== blink_simple.c
+==== blink_simple.c for RP2040
 
 [source,c]
 ----
 include::../examples/blink_rp2040/blink_simple.c[]
 ----
 
-===== CMakeLists.txt
+==== CMakeLists.txt for RP2040
 
 [source,cmake]
 ----
@@ -53,30 +54,138 @@ include::../examples/blink_rp2040/CMakeLists.txt[]
 ----
 
 
-
-
-==== Blink for P2350
+==== .microCI.yml for RP2350
 
 In `.microCI.yml`, use `pico2_w` as the `board` value and `raspberry_pico` as plugin's `name`.
-
-===== .microCI.yml
 
 [source,yaml]
 ----
 include::../examples/blink_rp2350/.microCI.yml[]
 ----
 
-===== blink_simple.c
+==== blink_simple.c for RP2350
 
 [source,c]
 ----
 include::../examples/blink_rp2350/blink_simple.c[]
 ----
 
-===== CMakeLists.txt
+==== CMakeLists.txt for RP2350
 
 [source,cmake]
 ----
 include::../examples/blink_rp2350/CMakeLists.txt[]
 ----
+
+
+==== Artifacts
+
+After building the project the following files are available:
+
+[listing]
+----
+build/blink_simple.bin
+build/blink_simple.dis
+build/blink_simple.elf
+build/blink_simple.elf.map
+build/blink_simple.hex
+build/blink_simple.uf2
+----
+
+include::file_format.adoc[]
+include::bootsel.adoc[]
+
+==== Loading firmware
+
+===== If already in BOOTSEL mode
+
+[source,console]
+----
+$ picotool load -x build/blink_simple.uf2
+----
+
+===== If your code is actively running
+
+Force a quick reset and flash with the `-f` flag.
+
+[source,console]
+----
+$ picotool load -fx build/blink_simple.uf2
+----
+
+===== .microCI.yml
+
+Lets add a new step in the pipeline to deploy our project.
+
+[source,yaml]
+----
+include::../examples/blink_rp2350_deploy/.microCI.yml[]
+----
+
+[TIP]
+**microCI** uses least privilege principle.
+
+[IMPORTANT]
+To deploy on hardware requires more privileges than the normal user supports by default.
+
+The new options in `.microCI.yml` file are:
+
+* `run_as: root` - execute commands in this step as `root`.
+* `privileged: true` - the container gains almost full access to the host's kernel, hardware, and underlying system tools.
+* `volumes:` - To map a Linux host's entire USB bus (`/dev/bus/usb`) to a Docker container
+* `only: load` - Steps with `only` are executed alone and outside of the default pipeline
+
+Building the firmware:
+
+[source,console]
+----
+microCI | bash
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                    ┃
+┃                          ░░░░░░░░░░░░░░░░░                         ┃
+┃                          ░░░░░░░█▀▀░▀█▀░░░                         ┃
+┃                          ░░░█░█░█░░░░█░░░░                         ┃
+┃                          ░░░█▀▀░▀▀▀░▀▀▀░░░                         ┃
+┃                          ░░░▀░░░░░░░░░░░░░                         ┃
+┃                          ░░░░░░░░░░░░░░░░░                         ┃
+┃                           microCI v0.47.0                          ┃
+┃           Write your pipeline once. Execute it anywhere.           ┃
+┃                                                                    ┃
+┃                                                                    ┃
+┃                        https://microci.dev/                        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+1 Build Raspberry Pi Pico firmware..........................: OK
+2 Load firmware in BOOTSEL mode.............................: SKIP
+----
+
+Notice only the first step was executed (marked with OK).
+
+Now lets load our firmware into raspberry pico:
+
+[source,console]
+----
+$ microCI --only load | bash
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                    ┃
+┃                          ░░░░░░░░░░░░░░░░░                         ┃
+┃                          ░░░░░░░█▀▀░▀█▀░░░                         ┃
+┃                          ░░░█░█░█░░░░█░░░░                         ┃
+┃                          ░░░█▀▀░▀▀▀░▀▀▀░░░                         ┃
+┃                          ░░░▀░░░░░░░░░░░░░                         ┃
+┃                          ░░░░░░░░░░░░░░░░░                         ┃
+┃                           microCI v0.47.0                          ┃
+┃           Write your pipeline once. Execute it anywhere.           ┃
+┃                                                                    ┃
+┃                                                                    ┃
+┃                        https://microci.dev/                        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+1 Load firmware in BOOTSEL mode.............................: OK
+----
+
 

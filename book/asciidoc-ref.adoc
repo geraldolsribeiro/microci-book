@@ -1,0 +1,39 @@
+
+== Interactive Terminal Commands (console)
+
+Use [source,console] when showing an interactive session. Prefix the actual
+input commands with a $ prompt symbol. Do not prefix the terminal's output.
+
+[source,console]
+----
+$ mkdir my-project
+$ cd my-project
+$ git init
+Initialized empty Git repository in /my-project/.git/
+----
+
+== Executable Shell Scripts (shell / bash)
+
+Use [source,shell] or [source,bash] when presenting an actual shell script file
+rather than a live user session. Do not use prompt symbols like $ here.
+
+[source,shell]
+----
+#!/bin/bash
+echo "Updating system packages..."
+sudo apt-get update && sudo apt-get upgrade -y
+----
+
+== Static Command Outputs (listing)
+
+If you want to display raw command output without any prompt styling or
+specialized command syntax highlighting, use a standard [listing] block or
+general text block.
+
+[listing]
+----
+ID      NAME           STATUS    AGE
+v1.0    api-server     Running   45d
+v1.1    web-gateway    Pending   2m
+----
+

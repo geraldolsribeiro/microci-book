@@ -60,3 +60,5 @@ include::timing-and-memory/content.adoc[]
 include::testing-and-ci/content.adoc[]
 
 include::security/content.adoc[]
+
+include::references.adoc[]

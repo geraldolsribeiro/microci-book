@@ -2,7 +2,7 @@ steps:
   - name: "Generate HTML from Asciidoc"
     description: "Description of this step"
     plugin:
-      name: asciidoc
+      name: skip # asciidoc
       output_format: html
       destination_dir: _book
       output: Gentle_Introduction_to_Embedded_Software_with_microCI.html

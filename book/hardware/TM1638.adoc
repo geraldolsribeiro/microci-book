@@ -1,0 +1,131 @@
+=== TM1638
+
+The **TM1638 IC** from *Titan Micro Electronics* is a display and keypad
+controller used in many small modules.
+It drives an 8-digit seven-segment display, up to 8 individual 3mm LEDs, and up to
+8 push buttons while using only three GPIO lines:
+
+* `CLK`: clocks data in and out
+* `STB`: selects the device and starts a transaction
+* `DIO`: carries serial data in both directions
+
+[TIP]
+TM1638 is an useful example of how a small serial interface can replace a much
+larger set of direct connections.
+
+.TM1638 CI with 7 segment display, LEDs, and keypad.
+image::TM1638_3d_view.jpg[pdfwidth=50%]
+
+The module communicates through a simple command-based protocol.
+A command byte selects the operation, and additional bytes carry the data for
+that operation.
+
+The controller can:
+
+* turn the display on or off
+* write a single byte or a sequence of bytes
+* scan the keypad and return button states
+
+The strobe (STB) and clock (CLK) pins are only outputs while the data (DIO) pin
+works for both input and output. The strobe pin is required when sending data
+to the module.
+
+Because the data line is bidirectional, keypad reads require a pull-up resistor.
+This is a common detail in embedded hardware: the protocol may look simple at
+the pin level, but the electrical behavior still matters.
+
+In firmware, the TM1638 is usually handled as a small stateful peripheral.
+The driver sends a command, writes or reads the required bytes, and then
+releases the bus before the next transaction.
+That makes the code easy to structure, but only if the timing and pin behavior
+described in the datasheet are followed carefully.
+
+The TM1638 is attractive in small systems because it combines display output
+and keypad input in a compact interface.
+It is also a good example of why reading the datasheet matters before writing firmware.
+
+==== LED to Address Mapping
+
+The 8 discrete LEDs are mapped to addresses as follows:
+
+* LED 0: `0xC1` or `1100 0001`
+* LED 1: `0xC3` or `1100 0011`
+* LED 2: `0xC5` or `1100 0101`
+* LED 3: `0xC7` or `1100 0111`
+* LED 4: `0xC9` or `1100 1001`
+* LED 5: `0xCB` or `1100 1011`
+* LED 6: `0xCD` or `1100 1101`
+* LED 7: `0xCF` or `1100 1111`
+
+Set LED state:
+
+1. Send the Display Control Command (`0x8F` maximum brightness)
+2. Send Data Command `0x44` to write to a single address
+3. Send the address byte for the LED
+4. Send `0x01` to turn it `ON`, or `0x00` to turn it `OFF`
+
+==== Seven-segment digits
+
+The 8 seven-segment digits are mapped to addresses as follows:
+
+* Digit 1: `0x00` or `0000 0000` 
+* Digit 2: `0x02` or `0000 0010`
+* Digit 3: `0x04` or `0000 0100`
+* Digit 4: `0x06` or `0000 0110`
+* Digit 5: `0x08` or `0000 1000`
+* Digit 6: `0x0A` or `0000 1010`
+* Digit 7: `0x0C` or `0000 1100`
+* Digit 8: `0x0E` or `0000 1110`
+
+===== Segment mapping
+
+* Bit 0: A
+* Bit 1: B
+* Bit 2: C
+* Bit 3: D
+* Bit 4: E
+* Bit 5: F
+* Bit 6: G
+* Bit 7: H (decimal point)
+
+.Seven-segment display encoding.
+image::seven-segment.png[]
+
+==== Sending data
+
+[cols="1,2,2,10",options="header"]
+|===
+2+|Instruction|Arguments|Details on its use
+|`0x8?`|`1000 abbb`|none|Turn display on or off (bit `a`) and set brightness (`bbb` bits)
+|`0x44`|`0100 0100`|`0xC?` `0x??`|Write value `0x??` at location `0xC?` (single address mode)
+|`0x40`|`0100 0000`|`0xC?` `0x??` `0x??` `0x??`|Write values `0x??` starting from `0xC?` address.
+|`0xC?`|`1100 aaaa`||This instruction follows one of the addressing commands and sets the
+address (lower four bits, `aaaa`) that you wish to write to.
+Example: Sending `0x57` to address `0x02` in single address mode, you send the
+instruction `0x44`, then `0xC2` (`0xC` combined with the address of `2` as the lower
+nibble), and then followed up by the data byte `0x57`.
+|`0x42`|`0100 0010`|N/A|Read the buttons. Once the instruction is received, the controller will set the
+DIO line as an output and will send 4 bytes of data.
+|===
+
+image::TM1638_example_1.png[pdfwidth=100%]
+
+image::TM1638_example_2.png[pdfwidth=100%]
+
+[TIP]
+The TM1638 controller chip can multiplex up to 16 pushbuttons in four rows.
+
+image::TM1638_pushbutton_map.png[pdfwidth=100%]
+
+image::TM1638_reading_pushbutton.png[pdfwidth=100%]
+
+=== Connecting to pico
+
+* `VCC` to Pico `VBUS` (5V power)
+* `GND` to Pico `GND`
+* `DIO` to Pico `GPIO 14` (Data Input/Output)
+* `CLK` to Pico `GPIO 15` (Clock)
+* `STB/STB0` to Pico `GPIO 13` (Strobe/Chip Select)
+
+
+
