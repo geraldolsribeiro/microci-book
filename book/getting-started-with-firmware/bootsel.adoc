@@ -1,0 +1,23 @@
+==== BOOTSEL
+
+BOOTSEL (Boot Select) mode is a special USB mass-storage mode used to program
+or reset your Raspberry Pi Pico.
+
+===== Entering BOOTSEL Mode
+
+1. Unplug the Raspberry Pi Pico from the computer.
+2. Press and hold the small, white BOOTSEL button.
+3. Plug the micro-USB or USB-C cable into the Pico while keeping the button held down.
+4. Release the button.
+5. The Pico will now mount to your computer's file explorer as a removable storage drive called RPI-RP2.
+
+[TIP]
+When in BOOTSEL mode the Pico will appear as a USB drive.
+
+.File manager showing the USB drive mounted.
+image::raspberry_pico_RP2350_mounted.png[]
+
+.USB drive properties.
+image::raspberry_pico_RP2350_property.png[pdfwidth=50%]
+
+

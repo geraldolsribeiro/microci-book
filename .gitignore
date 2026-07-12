@@ -8,3 +8,4 @@ docs
 book/examples/blink_rp2040/build
 book/examples/blink_rp2350/build
 book/examples/blink_rp2350_deploy/build
+book/examples/TM1638_01/build

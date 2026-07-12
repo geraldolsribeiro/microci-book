@@ -5,6 +5,8 @@ It exercises the GPIO path from firmware to hardware without introducing unneces
 
 include::blink.adoc[]
 
+include::TM1638.adoc[]
+
 // [source,c]
 // ----
 // // code/gpio_blink.c

@@ -1,3 +1,4 @@
+# examples/TM1638_01/.microCI.yml
 steps:
   - name: "Build Raspberry Pi Pico firmware"
     docker: "intmain/microci_raspberry_pico:latest"
@@ -24,5 +25,4 @@ steps:
     plugin:
       name: raspberry_pico
       bash: |
-        # /opt/picotool/picotool load -fx build/TM3816.elf
-        /opt/picotool/picotool load -fx build/TM3816.uf2
+        /opt/picotool/picotool load -fx build/TM1638_01.uf2

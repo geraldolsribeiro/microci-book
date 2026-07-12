@@ -1,3 +1,4 @@
+# examples/blink_rp2350_deploy/.microCI.yml
 steps:
   - name: "Build Raspberry Pi Pico firmware"
     docker: "intmain/microci_raspberry_pico:latest"

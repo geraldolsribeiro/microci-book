@@ -107,10 +107,12 @@ uint8_t tm1638_read_keys() {
 
   // Map the incoming byte matrix to a single 8-bit value
   for (int i = 0; i < 4; i++) {
-    if (segments[i] & 0x01)
+    if (segments[i] & 0x01) {
       keys |= (1 << i);
-    if (segments[i] & 0x10)
+    }
+    if (segments[i] & 0x10) {
       keys |= (1 << (i + 4));
+    }
   }
   return keys;
 }
@@ -135,13 +137,13 @@ int main() {
   uint32_t counter = 0;
 
   while (true) {
-    // Turn the LED on
+    // Turn the LED on at pico board
     cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-    sleep_ms(1);
+    sleep_ms(100);
 
-    // Turn the LED off
+    // Turn the LED off at pico board
     cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
-    sleep_ms(1);
+    sleep_ms(100);
 
     // Display a changing number across the digits
     uint32_t temp = counter;
@@ -152,7 +154,16 @@ int main() {
       temp /= 10;
     }
 
+    //   7   6   5   4   3   2   1   0
+    //  ()  ()  ()  ()  ()  ()  ()  ()  LED
+    //
+    //
+    //   7   6   5   4   3   2   1   0
+    // [O] [O] [O] [O] [O] [O] [O] [O] BUTTONS
+    //
+    // Read which buttons are pressed
     uint8_t pressed_buttons = tm1638_read_keys();
+    // Tun ON respective LED
     tm1638_set_leds(pressed_buttons);
 
     counter++;
