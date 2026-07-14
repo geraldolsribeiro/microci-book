@@ -1,0 +1,20 @@
+== Air-gapped enviroments
+
+An "air-gapped" system or network is physically and logically isolated from
+unsecured networks, including the internet. By creating a literal "air gap"
+between secure systems and potential threats, unauthorized remote access and
+cyberattacks are prevented, with data transfers requiring physical media like
+USB drives.
+
+=== Key Characteristics & Uses
+
+* **Physical Isolation:** The computer or network has no wired or wireless
+  connections (such as Wi-Fi or Bluetooth) to the outside world.
+* **High Security:** Used primarily for critical infrastructure (like power
+  plants), national defense, and storing highly sensitive data.
+* **Air-Gapped Backups:** In enterprise data protection, companies maintain
+  air-gapped backups to prevent ransomware from wiping out recovery data during
+  an attack.
+
+  // https://distr.sh/glossary/air-gapped-meaning/
+

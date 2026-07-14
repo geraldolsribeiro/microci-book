@@ -32,11 +32,21 @@ include::preface.adoc[]
 
 include::intro.adoc[]
 
+include::microci/content.adoc[]
+
+include::air-gapped-env/content.adoc[]
+
 include::fundamentals/content.adoc[]
+
+include::software-tools/content.adoc[]
 
 include::hardware/content.adoc[]
 
-include::getting-started-with-firmware/content.adoc[]
+include::proj_blink/content.adoc[]
+
+include::proj_tm1638_01/content.adoc[]
+
+// include::getting-started-with-firmware/content.adoc[]
 
 include::communication-protocols/content.adoc[]
 
@@ -56,9 +66,11 @@ include::interrupts/content.adoc[]
 
 include::timing-and-memory/content.adoc[]
 
-
 include::testing-and-ci/content.adoc[]
 
 include::security/content.adoc[]
 
 include::references.adoc[]
+
+// Other topics
+// Baremetal vs RTOS
