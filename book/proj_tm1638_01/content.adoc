@@ -72,5 +72,5 @@ build/TM1638_01.hex
 build/TM1638_01.uf2
 ----
 
-include::file_format.adoc[]
-include::bootsel.adoc[]
+// include::file_format.adoc[]
+// include::bootsel.adoc[]

@@ -1,0 +1,21 @@
+=== tio
+
+**tio** is a modern, lightweight serial terminal built specifically for
+microcontrollers like the Raspberry Pi Pico. 
+It doesn't use a complicated menu system, and its default prefix key is `Ctrl-T`.
+
+==== Install tio
+
+[source,console]
+----
+$ sudo apt install tio    # Ubuntu/Debian
+$ sudo dnf install tio    # Fedora
+$ sudo pacman -S tio      # Arch Linux
+----
+
+==== Interacting with USB
+
+[source,console]
+----
+tio /dev/ttyACM0
+----

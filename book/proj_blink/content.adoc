@@ -1,17 +1,61 @@
 === LED blink
 
-The code structure is the same across boards, but the LED connection is not.
-The correct pin matters.
-A call such as `gpio_put(25, 1)` may work on one board and fail on another, because the onboard LED is not always connected directly to the main microcontroller GPIO.
-On the Pico 2 W, for example, the LED is routed through the wireless chip instead of the RP2350 GPIO pins.
+The first project in this book is the classic **blink** application. Although
+simple, it is one of the most valuable exercises in embedded programming. A
+successful blink verifies that the complete software and hardware chain is
+working correctly: the project builds successfully, the firmware is flashed to
+the target board, the microcontroller executes the program, and a GPIO pin is
+able to control a physical device.
 
-For that reason, the examples in this section keep the same structure while adapting the pin selection for each board.
+At first glance, blinking an LED may appear trivial, but it establishes the
+foundation for every subsequent project in this book. Once GPIO control is
+working, the same concepts can be extended to buttons, sensors, communication
+interfaces, displays, and many other peripherals.
+
+[IMPORTANT]
+The overall program structure is identical across all supported boards, but the
+onboard LED is **not** wired the same way on every board. Consequently, the
+GPIO used to control the LED is board-specific.
+
+A statement such as `gpio_put(25, 1)` may work perfectly on one board but have
+no visible effect on another because the onboard LED is not always connected
+directly to a GPIO pin on the main microcontroller.
+
+For this reason, the examples in this section intentionally keep the program
+structure unchanged while adapting only the board-specific LED configuration.
+This highlights an important principle in embedded software: application logic
+should remain portable, while hardware-specific details should be isolated
+whenever possible.
+
+The original Raspberry Pi Pico and the Raspberry Pi Pico 2 W provide a good
+example of this hardware variation.
+
+On the original Pico, the onboard LED is connected directly to a GPIO pin of
+the microcontroller, allowing the firmware to control it by simply driving that
+GPIO.
+
+The Pico 2 W, however, introduces integrated Wi-Fi and Bluetooth hardware. To
+support this design, the onboard LED is connected through the wireless chip
+rather than directly to the RP2350 microcontroller. As a result, the LED is no
+longer controlled by toggling a normal GPIO pin.
+
+In particular, GPIO 25, which developers often associate with the onboard LED
+on earlier Pico boards, is no longer available for that purpose on the Pico 2
+W. Code that directly calls `gpio_put(25, 1)` will therefore not blink the
+onboard LED. Instead, the Pico SDK provides the appropriate board-specific
+definitions and APIs that abstract these hardware differences.
+
+This is an excellent example of why embedded software should rely on the board
+support package (BSP) or SDK whenever practical instead of hardcoding hardware
+details. Doing so makes applications easier to port to new boards and reduces
+the amount of code that must change when the underlying hardware evolves.
 
 // * PICO_DEFAULT_LED_PIN
 // * CYW43_WL_GPIO_LED_PIN
 // * PICO_DEFAULT_WS2812_PIN
 
-For this example you need the following files from `../examples/blink_rp2040/` or `../examples/blink_rp2350/` folders:
+To play with this example you need the following files from
+`../examples/blink_rp2040/` or `../examples/blink_rp2350/` folders:
 
 * `blink_simple.c` - C source code
 * `CMakeLists.txt` - Configuration file used by the CMake meta-build system
