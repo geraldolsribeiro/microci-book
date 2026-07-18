@@ -1,20 +1,559 @@
-== Air-gapped enviroments
+== Air-gapped environments
 
-An "air-gapped" system or network is physically and logically isolated from
-unsecured networks, including the internet. By creating a literal "air gap"
-between secure systems and potential threats, unauthorized remote access and
-cyberattacks are prevented, with data transfers requiring physical media like
-USB drives.
+.Air-gapped environment.
+image::air-gapped-environment.png[pdfwidth=85%]
 
-=== Key Characteristics & Uses
+Air-gapped systems are physically and logically isolated from public networks.
+In practice, this means no internet access, no dependence on external CI
+services, and no assumption that cloud tooling is available.
 
-* **Physical Isolation:** The computer or network has no wired or wireless
-  connections (such as Wi-Fi or Bluetooth) to the outside world.
-* **High Security:** Used primarily for critical infrastructure (like power
-  plants), national defense, and storing highly sensitive data.
-* **Air-Gapped Backups:** In enterprise data protection, companies maintain
-  air-gapped backups to prevent ransomware from wiping out recovery data during
-  an attack.
+For military and other sensitive environments, this isolation is often a
+requirement rather than a preference.
 
-  // https://distr.sh/glossary/air-gapped-meaning/
+=== What "air-gapped" means
 
+An **air-gapped environment** is a computing environment intentionally isolated
+from untrusted networks, particularly the public Internet. The objective is to
+reduce the attack surface and prevent direct network paths between sensitive
+systems and external infrastructure.
+
+The term originally described literal physical separation: a secure network and
+an external network were separated by an actual "gap," with no cable or network
+connection between them.
+
+In practice, modern air-gapped architectures can be more nuanced. An
+organization may operate several security domains, such as:
+
+* an enterprise IT network;
+* an industrial or operational technology (OT) network;
+* a military or mission-critical network;
+* isolated development and integration laboratories;
+* classified networks.
+
+These domains may need to exchange information, but communication is performed
+through **explicitly controlled boundaries** rather than unrestricted network
+routing.
+
+Depending on the security requirements, information may cross these boundaries
+through mechanisms such as approved removable media, secure transfer stations,
+cross-domain solutions, data diodes, or tightly controlled gateways.
+
+The important principle is not simply "no Internet." It is **controlled
+connectivity**.
+
+A sensitive system should communicate only with systems it is explicitly
+authorized to reach, using approved communication paths and security controls.
+
+This architecture limits the ability of an attacker to move laterally from a
+compromised network into a more sensitive environment.
+
+For example, an enterprise network may have controlled Internet access while an
+industrial control network and a military network remain isolated. Carefully
+designed mechanisms may allow specific information to move between these
+domains without providing general-purpose network connectivity.
+
+Air gaps therefore establish a strong security boundary:
+
+[IMPORTANT]
+Connectivity is not assumed. It must be explicitly justified, controlled, and monitored.
+
+
+
+=== Why organizations use air-gapped environments
+
+Most modern software development assumes permanent connectivity.
+
+Developers download packages from public repositories. Build systems retrieve
+dependencies dynamically. CI runners communicate with cloud services.
+Containers are pulled from public registries. Test results are uploaded to
+external platforms.
+
+For many organizations, this model is convenient and appropriate.
+
+For others, it represents an unacceptable security risk.
+
+Organizations operating critical systems must consider threats including:
+
+* malware and ransomware;
+* advanced persistent threats;
+* zero-day vulnerabilities;
+* compromised software dependencies;
+* supply-chain attacks;
+* credential theft;
+* malicious insiders;
+* accidental data disclosure;
+* unauthorized telemetry;
+* exfiltration of intellectual property or classified information.
+
+An air-gapped architecture reduces exposure by removing many of the
+communication paths that an attacker would normally exploit.
+
+This is particularly important when the consequences of compromise extend
+beyond the loss of ordinary business data.
+
+A successful cyberattack against a conventional information system may cause
+financial loss or operational disruption. A successful attack against critical
+infrastructure could interrupt electricity generation, water treatment,
+transportation, manufacturing, communications, or other essential services.
+
+In such environments, isolation becomes part of a broader **defense-in-depth
+strategy**.
+
+It does not eliminate the need for authentication, authorization, patch
+management, monitoring, physical security, or secure software development.
+Instead, it adds another powerful security boundary.
+
+
+=== Military and defense scenarios
+
+Military and defense systems are among the clearest examples of environments
+where network isolation may be necessary.
+
+A defense organization may operate multiple networks with fundamentally
+different security classifications and operational purposes.
+
+An enterprise network may provide conventional business services such as email,
+document management, and administrative applications.
+
+A separate engineering network may contain source code, simulation
+environments, hardware designs, cryptographic components, or proprietary
+algorithms.
+
+Operational networks may support command-and-control systems, communications
+equipment, radar systems, sensors, vehicles, or mission systems.
+
+Some of these environments may have no direct Internet connectivity at all.
+
+This separation serves several purposes.
+
+First, it protects sensitive information. Source code, system architecture,
+cryptographic material, operational data, and intelligence may have significant
+strategic value.
+
+Second, it limits the ability of an external attacker to reach mission-critical
+systems.
+
+Third, it reduces opportunities for data exfiltration. A compromised machine
+cannot simply establish an outbound connection to an external
+command-and-control server if no network path exists.
+
+Finally, isolation contributes to **operational resilience**.
+
+Military systems must often continue operating even when external
+infrastructure is unavailable or actively under attack. Development,
+integration, testing, and deployment processes may therefore need to function
+independently of Internet connectivity.
+
+This creates an important engineering requirement:
+
+[IMPORTANT]
+The software supply chain itself must be capable of operating inside the
+security boundary.
+
+It is not sufficient for the deployed system to be isolated if building,
+testing, or releasing that system requires sending source code or artifacts
+outside the protected environment.
+
+
+=== Why cloud CI becomes a poor fit
+
+Cloud-hosted continuous integration has transformed modern software development.
+
+A typical workflow is straightforward:
+
+----
+     Developer
+        |
+        v
+  Git Repository
+        |
+        v
+ Cloud CI Service
+        |
+        +--> Download Dependencies
+        |
+        +--> Build
+        |
+        +--> Test
+        |
+        +--> Package
+        |
+        v
+Artifact Registry
+----
+
+For many projects, this is an excellent model.
+
+In a restricted environment, however, several assumptions behind this
+architecture no longer hold.
+
+The CI service may require source code to leave the organization's security
+perimeter. Build workers may execute on infrastructure controlled by another
+organization. Dependencies may be downloaded from the Internet during every
+build. Container images may come from public registries. Build logs and
+artifacts may be stored externally.
+
+Even when a cloud provider offers strong security controls, the architecture
+may conflict with organizational policy.
+
+The fundamental question becomes:
+
+[IMPORTANT]
+Why should sensitive source code leave the protected environment simply to be
+compiled and tested?
+
+For some organizations, the answer is that it should not.
+
+The problem is therefore not that cloud CI is inherently insecure. The problem
+is that its trust model may be incompatible with the security model of an
+isolated environment.
+
+An air-gapped organization may require that:
+
+* source code remains inside the organization;
+* build infrastructure remains under organizational control;
+* dependencies come from approved internal repositories;
+* container images are mirrored and validated internally;
+* artifacts remain inside controlled storage;
+* build logs never leave the security domain;
+* the entire build process can operate without Internet connectivity.
+
+Under these constraints, CI must move **to the code**, rather than requiring
+the code to move to an external CI platform.
+
+=== What changes in an offline workflow
+
+Working without Internet connectivity changes several assumptions that
+developers normally take for granted.
+
+A build cannot assume that a package manager can contact a public repository.
+
+A container runtime cannot assume that it can pull an image from a public
+registry.
+
+A script cannot silently download a tool from the Internet.
+
+Documentation may not be available online.
+
+External APIs may be unreachable.
+
+The development environment must therefore become more **self-contained and
+deterministic**.
+
+Dependencies are typically downloaded, reviewed, approved, and imported into
+the isolated environment in advance. Organizations may maintain internal
+mirrors for operating-system packages, language-specific dependencies,
+container images, and development tools.
+
+For example:
+
+----
+  Internet / External Network
+             |
+             | Controlled import
+             v
++---------------------------+
+| Security Inspection       |
+| Validation / Approval     |
++---------------------------+
+             |
+             v
++===========================+
+|     AIR-GAPPED DOMAIN     |
+|                           |
+|  Internal Git Repository  |
+|  Internal Package Mirror  |
+|  Internal Image Registry  |
+|  Internal Artifact Store  |
+|                           |
++===========================+
+----
+
+Once imported, these resources become part of the controlled development
+environment.
+
+This approach introduces additional operational work, but it also encourages
+better engineering practices.
+
+Builds become less dependent on external state. Dependencies become explicit.
+Tool versions are controlled. Build environments can be reproduced.
+
+The question changes from:
+
+> "Can the build download everything it needs?"
+
+to:
+
+> "Do we know exactly what the build needs?"
+
+That distinction is fundamental to reproducible software engineering.
+
+=== Why microCI fits this model well
+
+microCI is particularly well suited to environments where the CI workflow must
+remain under the organization's control.
+
+Instead of requiring a project to depend on a specific external CI platform,
+microCI focuses on defining a pipeline that can be executed where the project
+actually lives.
+
+The same pipeline can run on a developer workstation, an internal build server,
+or another authorized machine inside the isolated environment.
+
+Conceptually:
+
+----
+Developer Workstation
+         |
+         | same pipeline
+         v
+Internal CI Server
+         |
+         | same pipeline
+         v
+Release Environment
+----
+
+The execution environment changes.
+
+The pipeline does not.
+
+This is particularly valuable in air-gapped environments because the CI process does not fundamentally depend on an external control plane.
+
+A project can keep its source code, build environment, dependencies, logs, and resulting artifacts entirely within the organization's security perimeter.
+
+Containerized execution provides an additional layer of consistency. Once the required container images are available inside the isolated environment, pipeline steps can execute in controlled environments with known toolchains and dependencies.
+
+This creates a useful separation:
+
+----
+         microCI Pipeline
+                |
+       +--------+--------+
+       |                 |
+       v                 v
+Developer Machine    CI Server
+       |                 |
+       +--------+--------+
+                |
+                v
+      Controlled Container
+       Build Environment
+----
+
+The objective is not merely to make CI work without the cloud.
+
+The objective is to make the build process **portable, reproducible,
+inspectable, and locally controlled**.
+
+For organizations concerned with technological sovereignty, this property is
+particularly important.
+
+The organization owns the source code.
+
+The organization controls the infrastructure.
+
+The organization controls the execution environment.
+
+And the organization decides where every artifact produced by the pipeline is
+stored.
+
+---
+
+=== Artifacts, logs, and audit trails
+
+A secure software pipeline produces more than executable binaries.
+
+It also produces evidence.
+
+Depending on the project, a pipeline may generate:
+
+* compiled binaries;
+* firmware images;
+* installation packages;
+* container images;
+* test reports;
+* static-analysis reports;
+* compiler warnings;
+* code-coverage reports;
+* dependency inventories;
+* checksums;
+* signatures;
+* build logs.
+
+In regulated, industrial, aerospace, or defense environments, these outputs can
+become part of the project's audit trail.
+
+For example, an organization may need to answer questions such as:
+
+* Which source revision produced this firmware?
+* Which compiler version was used?
+* Which dependencies were included?
+* Which tests were executed?
+* Did all tests pass?
+* Who initiated the build?
+* When was the artifact produced?
+* Has the artifact changed since it was built?
+
+A reproducible pipeline helps connect these pieces of information.
+
+----
+
+Source Revision
+        |
+        v
+Pipeline Definition
+        |
+        v
+Controlled Build Environment
+        |
+        +--> Build Logs
+        |
+        +--> Test Reports
+        |
+        +--> Analysis Reports
+        |
+        +--> Checksums
+        |
+        v
+Release Artifact
+----
+
+Together, these outputs establish **provenance**: evidence describing how a
+particular software artifact was produced.
+
+In an isolated environment, this information can remain entirely within the
+protected domain.
+
+Nothing requires build logs or artifacts to be uploaded to an external service.
+
+This makes local artifact storage and auditability natural parts of the CI
+architecture rather than optional additions.
+
+=== Practical workflow in an isolated lab
+
+Consider a development laboratory responsible for embedded firmware used in a
+sensitive system.
+
+The laboratory has no direct Internet access.
+
+Developers work on isolated workstations connected to an internal network.
+Source code is stored in an internal Git repository. Approved container images
+and dependencies are maintained locally.
+
+The workflow may look like this:
+
+----
+
+AIR-GAPPED DEVELOPMENT LAB
+
++--------------------+
+| Developer          |
+| Workstation        |
++---------+----------+
+          |
+          | git push
+          v
++--------------------+
+| Internal Git       |
+| Repository         |
++---------+----------+
+          |
+          v
++--------------------+
+| Internal CI Server |
+|      microCI       |
++---------+----------+
+          |
+          v
++--------------------+
+| Controlled Build   |
+| Container          |
++---------+----------+
+          |
+          +------> Compile
+          |
+          +------> Unit Tests
+          |
+          +------> Static Analysis
+          |
+          +------> Integration Tests
+          |
+          v
++--------------------+
+| Artifact Storage   |
++---------+----------+
+          |
+          v
++--------------------+
+| Hardware Test Lab  |
+|  CPU / MCU / FPGA  |
++--------------------+
+----
+
+A developer first executes the pipeline locally.
+
+The code is compiled and tested using the same pipeline definition that will
+later be used by the internal CI infrastructure.
+
+Once the changes are ready, they are pushed to the internal source repository.
+
+The internal CI server executes the pipeline again using approved container
+images and dependencies already available inside the isolated network.
+
+The resulting firmware is stored in the internal artifact repository together
+with logs, test reports, and other build metadata.
+
+If hardware-in-the-loop testing is required, the artifact can then be deployed
+to devices connected to the laboratory's test infrastructure.
+
+At no point does the source code need to leave the protected environment.
+
+More importantly, the development workflow does not fundamentally change
+because the Internet is unavailable.
+
+The same engineering principles still apply:
+
+----
+ Define
+   |
+   v
+ Build
+   |
+   v
+ Test
+   |
+   v
+ Verify
+   |
+   v
+Package
+   |
+   v
+ Deploy
+----
+
+The difference is **where these operations occur and who controls the
+infrastructure**.
+
+In an isolated environment, every stage can remain within the organization's
+security boundary.
+
+This is where a portable CI approach becomes especially useful. Instead of
+making the development process dependent on connectivity to a particular
+external service, the pipeline becomes an asset owned by the project itself.
+
+For embedded and mission-critical systems, this property goes beyond
+convenience.
+
+It contributes to reproducibility, auditability, technological sovereignty, and
+operational resilience.
+
+The result is a development process capable of continuing even when the outside
+world is unreachable:
+
+[IMPORTANT]
+**The source stays inside. The pipeline stays under your control. The build
+remains reproducible.**
+
+One technical nuance worth preserving in the chapter and its illustrations: a network with controlled cross-domain links or data diodes is not necessarily a **strict physical air gap**. The text above deliberately distinguishes strict isolation from broader isolated or segmented high-security environments, which will make the book's security terminology more credible.
