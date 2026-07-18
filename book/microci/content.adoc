@@ -1,3 +1,63 @@
 == microCI
 
-TBD
+microCI is a small, text-based CI workflow system designed for reproducible,
+local-first automation. It is especially useful in embedded development, where
+builds, flashing, validation, and artifact handling often need to work in
+restricted or offline environments.
+
+=== What microCI is
+
+microCI describes your workflow as plain text and executes it in a predictable
+way. The result is simple, readable automation that can be versioned alongside
+the project.
+
+=== Why microCI exists
+
+microCI exists to make embedded workflows easier to reproduce, easier to audit,
+and easier to run in constrained environments.
+
+=== Core principles
+
+* plain-text pipelines
+* local-first execution
+* reproducible steps
+* low operational overhead
+* portability across environments
+
+=== How a microCI pipeline runs
+
+A pipeline usually builds firmware, runs checks, and optionally packages or
+loads artifacts.
+
+=== Why it fits embedded development
+
+Embedded projects often need host tools, cross-compilers, board-specific steps,
+and hardware access. microCI keeps those steps explicit and repeatable.
+
+=== Why it fits air-gapped environments
+
+microCI does not depend on cloud services to be useful. That makes it well
+suited to isolated labs and controlled networks.
+
+=== Where microCI is better than heavier CI systems
+
+microCI is not meant to replace every CI platform. It is a better fit when the
+goal is simplicity, control, and offline operation.
+
+=== Common use cases
+
+* firmware builds
+* artifact generation
+* board flashing
+* hardware bring-up
+* serial logging
+* repeatable validation steps
+
+=== Available plugins
+
+microCI uses plugins to adapt the same pipeline model to different targets and
+tasks.
+
+* xref:microci-plugins#raspberry-pico[raspberry_pico] — Raspberry Pi Pico family builds and deployment
+* xref:microci-plugins#shell[shell] — generic shell execution
+* xref:microci-plugins#other-plugins[other plugins] — additional integrations and helpers

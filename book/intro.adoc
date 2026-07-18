@@ -1,26 +1,20 @@
 [introduction]
 = Introduction
 
+== Introduction
 
-This book is for readers who want to understand embedded software through practical examples and a workflow that can grow with the project.
+This book is for readers who want to build embedded software with a workflow
+that remains practical, reproducible, and under their control.
 
-The examples are written primarily in modern C++, with MicroPython used where it helps illustrate ideas more quickly or more clearly.
+microCI matters when a project must keep working without depending on cloud
+services, external accounts, or a strong network connection. That is common in
+restricted labs, on isolated networks, and in military or defense settings.
 
-Embedded software lives at the intersection of hardware constraints, software structure, and long-term maintainability. microCI is part of that story: it keeps the workflow in plain text, turns it into Bash, and lets the same pipeline run in different places without changing the idea behind it.
+The examples are written primarily in modern C++, with MicroPython used where it
+helps illustrate ideas more quickly or more clearly.
 
-That matters because embedded projects rarely stay small. A team may begin with a local build and a board on the desk, then slowly add checks, automation, and delivery steps as the project grows. microCI is built for that journey.
-
-Its promise is simple:
-
-* define the workflow once
-* keep it visible
-* run it anywhere
-
-For embedded work, that becomes a practical advantage. The same pipeline can help build firmware, run checks, generate documentation, package artifacts, and prepare delivery for hardware targets. The process stays readable, versioned, and under control while the code evolves.
-
-microCI also reflects a larger idea: sovereignty. It is meant for teams that want ownership of their pipeline, their artifacts, and their execution environment.
-
-The Raspberry Pi Pico family is the platform used in the book, chosen because it is practical, accessible, and capable enough to support the examples without becoming the focus of the text.
+The Raspberry Pi Pico family is the platform used in the book because it keeps
+the examples accessible while still being close to real embedded constraints.
 
 By the end of the book, readers should be able to:
 
@@ -29,3 +23,15 @@ By the end of the book, readers should be able to:
 * work with common peripherals and interrupt-driven code
 * reason about timing, memory, and hardware constraints
 * test and automate embedded projects with microCI
+
+=== Why this book exists
+
+=== Why embedded CI is hard
+
+=== Why microCI
+
+=== Why the Raspberry Pi Pico family
+
+=== Why modern C++
+
+=== What the reader will learn

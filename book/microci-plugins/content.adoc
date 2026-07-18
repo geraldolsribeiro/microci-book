@@ -1,0 +1,58 @@
+== MicroCI Plugins
+
+This chapter documents the plugins available in microCI.
+
+The goal is to keep the main microCI chapter focused on concepts and workflow,
+while this chapter serves as a detailed reference for implementation details.
+
+=== Plugin overview
+
+microCI plugins extend the same pipeline model to different targets and tasks.
+
+* xref:microci-plugins#raspberry-pico[raspberry_pico] — Raspberry Pi Pico family builds and deployment
+* xref:microci-plugins#shell[shell] — execute shell commands
+* xref:microci-plugins#other-plugins[other plugins] — additional helpers and integrations
+
+=== Raspberry Pi Pico plugin
+
+==== Purpose
+
+==== Supported boards
+
+==== Configuration options
+
+==== Build behavior
+
+==== Flash and deploy behavior
+
+==== Example
+
+==== Notes and limitations
+
+=== Shell plugin
+
+==== Purpose
+
+==== Configuration options
+
+==== Typical use cases
+
+==== Example
+
+==== Notes and limitations
+
+=== Other plugins
+
+==== Purpose
+
+==== Plugin list
+
+==== When to use them
+
+==== Notes
+
+=== References
+
+* xref:microci[]
+* xref:testing-and-ci[]
+* xref:build-system[]

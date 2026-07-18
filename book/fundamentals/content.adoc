@@ -1,14 +1,19 @@
 == Fundamentals
 
-=== Understanding the problem space
-
-Embedded software is built under constraints that are always present, even when they are not obvious at first.
-The processor may be small, memory may be limited, timing may be strict, and power may matter from the first prototype.
-At the same time, the code must remain maintainable enough to grow into a real product.
+Embedded software is built under constraints that are always present, even when
+ they are not obvious at first.
+The processor may be small, memory may be limited, timing may be strict, and
+power may matter from the first prototype.
+At the same time, the code must remain maintainable enough to grow into a real
+product.
 
 The problem space is therefore not just about writing code that works.
-It is about balancing hardware limits, system behavior, and long-term maintainability.
-That is why this book starts with the fundamentals before moving into tools, architecture, and communication.
+It is about balancing hardware limits, system behavior, and long-term
+maintainability.
+That is why this book starts with the fundamentals before moving into tools,
+architecture, and communication.
+
+=== Understanding the problem space
 
 === Common constraints
 
@@ -23,5 +28,11 @@ That is why this book starts with the fundamentals before moving into tools, arc
 |===
 
 These constraints are not independent.
-A change that improves one area often affects another, so embedded software requires trade-offs instead of isolated decisions.
+A change that improves one area often affects another, so embedded software
+requires trade-offs instead of isolated decisions.
 
+=== Trade-offs in practice
+
+=== Maintainability under constraints
+
+=== From constraints to architecture

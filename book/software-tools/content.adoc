@@ -1,3 +1,22 @@
 == Software Tools
 
-include::tio.adoc
+This chapter covers the host-side tools that support embedded development on the
+Pico platform.
+
+The exact tools matter less than the workflow they enable: editing, building,
+flashing, logging, inspecting artifacts, and repeating the same steps in a
+controlled way.
+
+=== Terminal workflow
+
+=== Serial console tools
+
+include::tio.adoc[]
+
+=== Flashing tools
+
+=== Build helpers
+
+=== Logging and inspection
+
+=== Tooling in offline environments

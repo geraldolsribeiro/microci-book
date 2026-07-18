@@ -1,17 +1,22 @@
 == Hardware
 
 This book uses inexpensive hardware on purpose.
-The goal is not to study the board for its own sake, but to learn embedded concepts that apply far beyond a single device.
+The goal is not to study the board for its own sake, but to learn embedded
+concepts that apply far beyond a single device.
 
 A small and accessible platform keeps the examples concrete.
-It lets the reader see real constraints, real interfaces, and real trade-offs without needing expensive equipment or a large lab setup.
-That makes it easier to focus on the ideas that matter: firmware structure, timing, peripherals, testing, and automation.
+It lets the reader see real constraints, real interfaces, and real trade-offs
+without needing expensive equipment or a large lab setup.
+That makes it easier to focus on the ideas that matter: firmware structure,
+timing, peripherals, testing, and automation.
 
 The same ideas scale.
-Once they are understood in a simple environment, they can be carried into larger projects, more complex boards, and stricter production workflows.
-Learning the pattern in the small gives the reader a way to recognize it in the large.
+Once they are understood in a simple environment, they can be carried into
+larger projects, more complex boards, and stricter production workflows.
+Learning the pattern in the small gives the reader a way to recognize it in the
+large.
 
-Hardware list:
+=== Hardware list
 
 * Raspberry Pico
 * Digital Analyser
