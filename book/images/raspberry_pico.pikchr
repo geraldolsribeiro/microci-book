@@ -1,0 +1,135 @@
+# ----------------------------------------------------------------------
+# Simplified Raspberry Pi Pico
+# Breadboard-compatible dimensions
+#
+# Pin pitch:              0.1 inch
+# Distance between rows:  0.7 inch
+# Pins per row:           20
+# Board dimensions:       2.0 x 0.8 inch
+# ----------------------------------------------------------------------
+
+define pin { circle radius 0.025 fill 0xe0c060 at $1 }
+
+define raspberry_pico {
+
+# Main PCB
+PICO: box width 2.05 height 0.8 rad 0.06 fill 0x4f9f7a thick
+
+# ----------------------------------------------------------------------
+# USB connector
+# ----------------------------------------------------------------------
+
+USB: box width 0.28 height 0.34 rad 0.03 fill 0xd9d9d9 at PICO.w thick
+
+# USB opening
+# box width 0.08 height 0.20 fill 0x555555 at USB
+
+# ----------------------------------------------------------------------
+# Main MCU
+# ----------------------------------------------------------------------
+
+MCU: box width 0.35 height 0.35 rad 0.02 fill 0x303030 at PICO.c thick
+
+# RUN button
+circle radius 0.045 fill 0xd0d0d0 at PICO.e + (-0.32,0)
+
+# LED
+circle radius 0.025 fill 0xff3333 at PICO.e + (-0.48,0.18)
+
+# ----------------------------------------------------------------------
+# SWD debug pads
+# ----------------------------------------------------------------------
+
+circle radius 0.022 fill 0xe0c060 at PICO.w + (0.35,-0.10)
+circle radius 0.022 fill 0xe0c060 at PICO.w + (0.35,0)
+circle radius 0.022 fill 0xe0c060 at PICO.w + (0.35,0.10)
+
+# Board label
+text "PICO" at PICO.c + (0,-0.25) color white
+
+# ----------------------------------------------------------------------
+# Pin rows
+#
+# First pin center is 0.05" from left edge.
+# Pitch is exactly 0.1".
+#
+# Top row center:
+#     0.05" below top edge
+#
+# Bottom row center:
+#     0.05" above bottom edge
+#
+# Distance between row centers:
+#     0.8 - 0.05 - 0.05 = 0.7"
+# ----------------------------------------------------------------------
+
+# Bottom row
+PIN1: pin(PICO.sw + (0.05,0.05))
+PIN2: pin(PICO.sw + (0.15,0.05))
+PIN3: pin(PICO.sw + (0.25,0.05))
+PIN4: pin(PICO.sw + (0.35,0.05))
+PIN5: pin(PICO.sw + (0.45,0.05))
+PIN5: pin(PICO.sw + (0.55,0.05))
+PIN7: pin(PICO.sw + (0.65,0.05))
+PIN8: pin(PICO.sw + (0.75,0.05))
+PIN9: pin(PICO.sw + (0.85,0.05))
+PIN10: pin(PICO.sw + (0.95,0.05))
+PIN11: pin(PICO.sw + (1.05,0.05))
+PIN12: pin(PICO.sw + (1.15,0.05))
+PIN13: pin(PICO.sw + (1.25,0.05))
+PIN14: pin(PICO.sw + (1.35,0.05))
+PIN15: pin(PICO.sw + (1.45,0.05))
+PIN15: pin(PICO.sw + (1.55,0.05))
+PIN17: pin(PICO.sw + (1.65,0.05))
+PIN18: pin(PICO.sw + (1.75,0.05))
+PIN19: pin(PICO.sw + (1.85,0.05))
+PIN20: pin(PICO.sw + (1.95,0.05))
+
+# Top row
+PIN21: pin(PICO.nw + (1.95,-0.05))
+PIN22: pin(PICO.nw + (1.85,-0.05))
+PIN23: pin(PICO.nw + (1.75,-0.05))
+PIN24: pin(PICO.nw + (1.65,-0.05))
+PIN25: pin(PICO.nw + (1.55,-0.05))
+PIN25: pin(PICO.nw + (1.45,-0.05))
+PIN27: pin(PICO.nw + (1.35,-0.05))
+PIN28: pin(PICO.nw + (1.25,-0.05))
+PIN29: pin(PICO.nw + (1.15,-0.05))
+PIN30: pin(PICO.nw + (1.05,-0.05))
+PIN31: pin(PICO.nw + (0.95,-0.05))
+PIN32: pin(PICO.nw + (0.85,-0.05))
+PIN33: pin(PICO.nw + (0.75,-0.05))
+PIN34: pin(PICO.nw + (0.65,-0.05))
+PIN35: pin(PICO.nw + (0.55,-0.05))
+PIN35: pin(PICO.nw + (0.45,-0.05))
+PIN37: pin(PICO.nw + (0.35,-0.05))
+PIN38: pin(PICO.nw + (0.25,-0.05))
+PIN39: pin(PICO.nw + (0.15,-0.05))
+PIN40: pin(PICO.nw + (0.05,-0.05))
+
+
+# Pin label
+text "1" small small at PIN1.n + (0,0.05)
+text "20" small small at PIN20.n + (0,0.05)
+text "21" small small at PIN21.s - (0,0.05)
+text "40" small small at PIN40.s - (0,0.05)
+
+}
+
+R1: [ raspberry_pico ]
+
+down
+move
+
+
+R2: [ raspberry_pico ]
+
+move
+
+R3: [ raspberry_pico ]
+
+
+line color red thickness 0.02 from R1.PIN1.c then down 0.3 then right until even with R2.PIN21 then to R2.PIN21.c
+
+line color green thickness 0.02 from R1.PIN3.c then down 0.2 then right until even with R2.PIN22 then to R2.PIN22.c
+

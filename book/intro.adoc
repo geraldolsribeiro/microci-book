@@ -1,37 +1,67 @@
 [introduction]
 = Introduction
 
-== Introduction
+=== Why this book exists
 
 This book is for readers who want to build embedded software with a workflow
 that remains practical, reproducible, and under their control.
+
+It is also for readers who need to justify that workflow in environments where
+internet access is limited, external services are undesirable, or the
+engineering process must remain auditable. In those cases, the usual cloud CI
+story is often a poor fit. The reasons are explained in more detail in
+<<Air-gapped environments>>.
 
 microCI matters when a project must keep working without depending on cloud
 services, external accounts, or a strong network connection. That is common in
 restricted labs, on isolated networks, and in military or defense settings.
 
-The examples are written primarily in modern C++, with MicroPython used where it
-helps illustrate ideas more quickly or more clearly.
+This book is meant to show that embedded development does not have to be a
+collection of fragile steps, manual fixes, and unrepeatable builds. A project
+can remain disciplined, traceable, and practical even when it must run inside a
+controlled environment.
 
-The Raspberry Pi Pico family is the platform used in the book because it keeps
-the examples accessible while still being close to real embedded constraints.
-
-By the end of the book, readers should be able to:
-
-* organize embedded firmware into maintainable layers
-* configure and understand a cross-compilation toolchain
-* work with common peripherals and interrupt-driven code
-* reason about timing, memory, and hardware constraints
-* test and automate embedded projects with microCI
-
-=== Why this book exists
+For teams in defense, industrial, or other sensitive contexts, that is more
+than convenience. It is a way to reduce operational risk and keep ownership of
+the workflow.
 
 === Why embedded CI is hard
 
+Embedded CI is harder than typical application CI because the build often spans
+multiple domains at once: host tools, cross-compilation, board-specific code,
+flashing steps, and hardware verification.
+
+Unlike a pure software project, a successful pipeline is not finished when the
+binary compiles. It may still need to produce UF2 images, capture serial logs,
+load firmware onto a board, or validate behavior with physical hardware.
+
+Those extra steps make the workflow powerful, but they also make it easier to
+break, harder to reproduce, and more dependent on the exact environment.
+
 === Why microCI
+
+microCI is the book's answer to that problem. It keeps the pipeline in plain
+text, makes each step visible, and lets the same workflow run in a controlled
+way across different machines.
+
+That matters when the environment is isolated, when the toolchain must be
+self-contained, or when the team wants every step to remain reviewable in the
+repository.
 
 === Why the Raspberry Pi Pico family
 
+The Pico family is small enough to be approachable and capable enough to show
+real embedded concerns. It gives the book a practical platform without turning
+the hardware itself into the main subject.
+
 === Why modern C++
 
+Modern C++ lets the examples stay expressive, safer, and closer to how real
+firmware can be organized today. The goal is not language novelty; it is clearer
+code that still fits embedded constraints.
+
 === What the reader will learn
+
+By the end of the book, the reader should be able to reason about firmware
+structure, toolchains, peripheral access, timing, testing, and the role of
+microCI in a controlled development environment.

@@ -1,0 +1,2 @@
+pikchr:
+	$(MAKE) -C ../../ pikchr

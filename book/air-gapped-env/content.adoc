@@ -7,6 +7,7 @@ Air-gapped systems are physically and logically isolated from public networks.
 In practice, this means no internet access, no dependence on external CI
 services, and no assumption that cloud tooling is available.
 
+[IMPORTANT]
 For military and other sensitive environments, this isolation is often a
 requirement rather than a preference.
 
@@ -398,7 +399,6 @@ For example, an organization may need to answer questions such as:
 A reproducible pipeline helps connect these pieces of information.
 
 ----
-
 Source Revision
         |
         v
@@ -556,4 +556,9 @@ world is unreachable:
 **The source stays inside. The pipeline stays under your control. The build
 remains reproducible.**
 
-One technical nuance worth preserving in the chapter and its illustrations: a network with controlled cross-domain links or data diodes is not necessarily a **strict physical air gap**. The text above deliberately distinguishes strict isolation from broader isolated or segmented high-security environments, which will make the book's security terminology more credible.
+One technical nuance worth preserving in the chapter and its illustrations: a
+network with controlled cross-domain links or data diodes is not necessarily a
+**strict physical air gap**. The text above deliberately distinguishes strict
+isolation from broader isolated or segmented high-security environments, which
+will make the book's security terminology more credible.
+

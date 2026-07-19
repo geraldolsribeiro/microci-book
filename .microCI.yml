@@ -1,4 +1,13 @@
 steps:
+  - name: "Build diagrams via pikchr"
+    description: "Build diagrams from textual description"
+    plugin:
+      name: "pikchr"
+      source:
+        - "book/images/*.pikchr"
+      type: svg # svg | png | pdf
+      output_folder: "book/images/"
+
   - name: "Generate HTML from Asciidoc"
     description: "Description of this step"
     plugin:
@@ -19,4 +28,3 @@ steps:
       input:
         - book/index.adoc
 
-# vim: spell spelllang=pt,en

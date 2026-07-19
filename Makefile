@@ -70,3 +70,6 @@ book/images/%.png: book/images/%.webp
 
 local-deps:
 	sudo apt install asciidoctor ruby-asciidoctor-pdf pngquant imagemagick
+
+pikchr:
+	microCI -N 1 | bash

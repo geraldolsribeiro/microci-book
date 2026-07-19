@@ -58,6 +58,6 @@ goal is simplicity, control, and offline operation.
 microCI uses plugins to adapt the same pipeline model to different targets and
 tasks.
 
-* xref:microci-plugins#raspberry-pico[raspberry_pico] — Raspberry Pi Pico family builds and deployment
-* xref:microci-plugins#shell[shell] — generic shell execution
-* xref:microci-plugins#other-plugins[other plugins] — additional integrations and helpers
+// * xref:microci-plugins#raspberry-pico[raspberry_pico] — Raspberry Pi Pico family builds and deployment
+// * xref:microci-plugins#shell[shell] — generic shell execution
+// * xref:microci-plugins#other-plugins[other plugins] — additional integrations and helpers

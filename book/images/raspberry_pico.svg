@@ -1,0 +1,164 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 319.68 493.92">
+<path d="M30,117L308,117A8 8 0 0 0 317 108L317,10A8 8 0 0 0 308 2L30,2A8 8 0 0 0 22 10L22,108A8 8 0 0 0 30 117Z"  style="fill:rgb(79,159,122);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<path d="M6,84L38,84A4 4 0 0 0 42 79L42,39A4 4 0 0 0 38 35L6,35A4 4 0 0 0 2 39L2,79A4 4 0 0 0 6 84Z"  style="fill:rgb(217,217,217);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<path d="M147,84L192,84A2 2 0 0 0 195 82L195,37A2 2 0 0 0 192 34L147,34A2 2 0 0 0 144 37L144,82A2 2 0 0 0 147 84Z"  style="fill:rgb(48,48,48);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<circle cx="271" cy="59" r="6.48"  style="fill:rgb(208,208,208);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="33" r="3.6"  style="fill:rgb(255,51,51);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="74" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="59" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="45" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="169" y="95" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">PICO</text>
+<circle cx="32" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="46" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="60" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="75" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="89" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="104" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="118" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="132" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="147" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="161" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="176" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="190" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="204" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="219" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="233" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="262" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="276" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="291" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="305" cy="107" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="305" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="291" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="276" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="262" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="233" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="219" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="204" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="190" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="176" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="161" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="147" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="132" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="118" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="104" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="89" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="75" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="60" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="46" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="32" cy="11" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="32" y="96" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">1</text>
+<text x="305" y="96" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">20</text>
+<text x="305" y="22" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">21</text>
+<text x="32" y="22" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">40</text>
+<path d="M30,304L308,304A8 8 0 0 0 317 295L317,198A8 8 0 0 0 308 189L30,189A8 8 0 0 0 22 198L22,295A8 8 0 0 0 30 304Z"  style="fill:rgb(79,159,122);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<path d="M6,271L38,271A4 4 0 0 0 42 267L42,226A4 4 0 0 0 38 222L6,222A4 4 0 0 0 2 226L2,267A4 4 0 0 0 6 271Z"  style="fill:rgb(217,217,217);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<path d="M147,272L192,272A2 2 0 0 0 195 269L195,224A2 2 0 0 0 192 221L147,221A2 2 0 0 0 144 224L144,269A2 2 0 0 0 147 272Z"  style="fill:rgb(48,48,48);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<circle cx="271" cy="246" r="6.48"  style="fill:rgb(208,208,208);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="221" r="3.6"  style="fill:rgb(255,51,51);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="261" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="246" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="232" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="169" y="282" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">PICO</text>
+<circle cx="32" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="46" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="60" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="75" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="89" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="104" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="118" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="132" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="147" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="161" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="176" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="190" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="204" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="219" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="233" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="262" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="276" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="291" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="305" cy="294" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="305" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="291" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="276" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="262" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="233" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="219" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="204" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="190" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="176" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="161" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="147" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="132" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="118" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="104" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="89" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="75" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="60" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="46" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="32" cy="199" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="32" y="284" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">1</text>
+<text x="305" y="284" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">20</text>
+<text x="305" y="209" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">21</text>
+<text x="32" y="209" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">40</text>
+<path d="M30,491L308,491A8 8 0 0 0 317 483L317,385A8 8 0 0 0 308 376L30,376A8 8 0 0 0 22 385L22,483A8 8 0 0 0 30 491Z"  style="fill:rgb(79,159,122);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<path d="M6,458L38,458A4 4 0 0 0 42 454L42,414A4 4 0 0 0 38 409L6,409A4 4 0 0 0 2 414L2,454A4 4 0 0 0 6 458Z"  style="fill:rgb(217,217,217);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<path d="M147,459L192,459A2 2 0 0 0 195 456L195,411A2 2 0 0 0 192 408L147,408A2 2 0 0 0 144 411L144,456A2 2 0 0 0 147 459Z"  style="fill:rgb(48,48,48);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<circle cx="271" cy="434" r="6.48"  style="fill:rgb(208,208,208);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="408" r="3.6"  style="fill:rgb(255,51,51);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="448" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="434" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="72" cy="419" r="3.168"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="169" y="470" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">PICO</text>
+<circle cx="32" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="46" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="60" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="75" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="89" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="104" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="118" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="132" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="147" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="161" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="176" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="190" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="204" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="219" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="233" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="262" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="276" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="291" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="305" cy="482" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="305" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="291" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="276" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="262" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="248" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="233" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="219" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="204" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="190" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="176" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="161" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="147" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="132" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="118" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="104" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="89" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="75" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="60" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="46" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="32" cy="386" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="32" y="471" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">1</text>
+<text x="305" y="471" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">20</text>
+<text x="305" y="397" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">21</text>
+<text x="32" y="397" text-anchor="middle" fill="rgb(0,0,0)" font-size="64%" dominant-baseline="central">40</text>
+<path d="M32,107L32,150L305,150L305,199"  style="fill:none;stroke-width:2.88;stroke-linejoin:round;stroke:rgb(255,0,0);" />
+<path d="M60,107L60,136L291,136L291,199"  style="fill:none;stroke-width:2.88;stroke-linejoin:round;stroke:rgb(0,128,0);" />
+</svg>
+
