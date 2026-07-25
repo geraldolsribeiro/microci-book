@@ -1,6 +1,10 @@
-=== Controlling TM1638
+== Mini-Project: Controlling TM1638
+
+=== Introduction
 
 image::../images/pico_TM1638_01.png[]
+
+=== Files used in this project
 
 For this example you need the following files from `../examples/TM1638_01/` folder:
 

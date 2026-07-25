@@ -1,12 +1,20 @@
 [preface]
 = Preface
 
-This book is a practical guide to modern embedded software development, aided by microCI.
+This book begins with a practical claim: embedded development gets much easier
+when the workflow is controlled, reproducible, and close to the hardware.
 
-It focuses on the ideas and practices that matter across embedded projects: firmware structure, toolchains, peripherals, timing, testing, and the habits that make systems easier to maintain over time.
+The opening chapter explains why that matters, especially in isolated, audited,
+or military-adjacent environments. If you are new to that argument, read
+xref:intro[] first; it sets the context for the rest of the book.
 
-microCI is part of the story because it helps make the workflow reproducible and scalable, from early bring-up to more complete development and testing pipelines.
+From there, the chapters move from motivation to practice: first the constraints,
+then the tools, then the firmware, and finally the testing and security pieces
+that make the workflow sustainable.
 
-The Raspberry Pi Pico family is the platform used throughout the examples so the reader can move from basic bring-up to more complete workflows without changing the core hardware.
+The Raspberry Pi Pico family is the platform used throughout the examples so the
+reader can move from basic bring-up to more complete workflows without changing
+the core hardware.
 
-The main examples use modern C++, with MicroPython appearing where it helps clarify a concept or shorten an example.
+The main examples use modern C++, with MicroPython appearing where it helps
+clarify a concept or shorten an example.

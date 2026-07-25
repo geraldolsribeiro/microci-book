@@ -1,0 +1,31 @@
+// Glossary for stable terminology.
+// Add entries here when a term appears in multiple chapters.
+
+= Glossary
+
+== microCI
+
+Preferred term:: microCI
+Meaning:: The workflow and tooling described by the book for reproducible embedded development in controlled environments.
+Notes:: Keep capitalization consistent.
+
+== Air-gapped environment
+
+Preferred term:: air-gapped environment
+Meaning:: A restricted environment with limited or no external network access.
+Notes:: Use this term consistently; avoid random variants.
+
+== Raspberry Pi Pico family
+
+Preferred term:: Raspberry Pi Pico family
+Meaning:: The hardware platform used throughout the examples.
+Notes:: Keep the family name intact when referring to specific boards.
+
+== UF2
+
+Preferred term:: UF2
+Meaning:: A firmware image format commonly used for board flashing workflows.
+Notes:: Explain it once, then reuse the acronym.
+
+// Maintenance note:
+// If you rename a concept in a chapter, update this file and any affected headings.

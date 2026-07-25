@@ -1,0 +1,42 @@
+// Canonical book outline.
+// Keep this synchronized with `index.adoc` and the chapter files.
+
+= Book Outline
+
+== Front matter
+- Dedication
+- Preface
+- Introduction
+- Air-gapped environments
+
+== Core workflow
+- microCI
+- Fundamentals
+- Software Tools
+- Hardware
+- RISC
+- Project: LED blink
+- Project: TM1638 control
+
+== Concepts and conventions
+- Communication Protocols
+- Code and Listing Conventions
+- Naming Conventions
+- Toolchain
+- Build System
+- Firmware Architecture
+- Peripherals
+- Interrupts
+- Timing and Memory
+
+== Quality and assurance
+- Testing and CI
+- Security
+- MicroCI Plugins
+
+== Reference material
+- References
+- Summary
+
+// Maintenance note:
+// If a heading changes in the book, update this outline in the same change set.

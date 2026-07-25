@@ -1,0 +1,14 @@
+// Editorial changelog for the book.
+// Record meaningful maintenance changes here, not every typo fix.
+
+= Changelog
+
+== Unreleased
+
+- Added book-writing workflow files for Pi.
+- Added style, outline, glossary, and changelog guidance.
+- Added prompt templates for rewrite, refactor, review, outline, and glossary updates.
+- Added a new RISC chapter.
+- Added Sipeed Longan Nano to the hardware chapter.
+
+// Future entries should note structural changes, terminology changes, and major rewrites.

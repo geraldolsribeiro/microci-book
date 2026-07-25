@@ -1,0 +1,26 @@
+=== Sipeed Longan Nano
+
+The Sipeed Longan Nano is a minimalist RISC-V development board based on the
+GigaDevice GD32VF103CBT6.
+
+.Sipeed Longan Nano board
+image::../images/longan_nano.jpg[pdfwidth=70%]
+
+According to Sipeed, the board draws out all of the chip's I/Os and includes
+on-board USB-C, LCD, SD card, JTAG, and other interfaces.
+That makes it a compact but practical board for students, engineers, and
+enthusiasts who want to learn the latest generation of RISC-V processors.
+
+It belongs in the hardware chapter because it gives the book a second concrete
+board to discuss alongside the Raspberry Pi Pico family.
+That makes it easier to compare ecosystems, instruction-set choices, and board
+layouts without turning the book into a vendor catalog.
+
+The Longan Nano is especially useful when introducing the idea that different
+microcontrollers can support the same embedded concepts even when their
+architecture, toolchain, and board support differ.
+
+=== Pinout
+
+.Sipeed Longan Nano pinout
+image::../images/longan-nano-pinout.svg[pdfwidth=90%]

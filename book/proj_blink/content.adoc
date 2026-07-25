@@ -1,4 +1,6 @@
-=== LED blink
+== Mini-Project: LED blink
+
+=== Introduction
 
 The first project in this book is the classic **blink** application. Although
 simple, it is one of the most valuable exercises in embedded programming. A
@@ -53,6 +55,8 @@ the amount of code that must change when the underlying hardware evolves.
 // * PICO_DEFAULT_LED_PIN
 // * CYW43_WL_GPIO_LED_PIN
 // * PICO_DEFAULT_WS2812_PIN
+
+=== Files used in this project
 
 To play with this example you need the following files from
 `../examples/blink_rp2040/` or `../examples/blink_rp2350/` folders:

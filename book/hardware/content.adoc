@@ -18,12 +18,19 @@ large.
 
 === Hardware list
 
-* Raspberry Pico
+* Raspberry Pi Pico family
+* Sipeed Longan Nano
 * Digital Analyser
 * TM1638
 
+<<<
 include::pico-platform.adoc[]
 
+<<<
+include::longan-nano.adoc[]
+
+<<<
 include::logic-analyser.adoc[]
 
+<<<
 include::TM1638.adoc[]

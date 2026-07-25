@@ -1,0 +1,20 @@
+=== RISC overview
+
+RISC stands for Reduced Instruction Set Computer.
+The name describes a design philosophy: keep the instruction set relatively
+small and make individual instructions simpler to decode and execute.
+
+That simplicity does not mean the processor is weak.
+It means the architecture usually relies on a cleaner pipeline, efficient
+register usage, and a design that can be easier to optimize for predictable
+embedded workloads.
+
+For an embedded reader, the useful question is not whether RISC is "better"
+in the abstract.
+The useful question is how the architecture affects instruction flow,
+peripheral access, memory use, and the style of firmware you write.
+
+The Raspberry Pi Pico family belongs in this discussion because the RP2350 can
+boot as either ARM Cortex-M33 or RISC-V, depending on the variant.
+That makes the family a good bridge between board-level examples and the
+architecture ideas introduced in this chapter.

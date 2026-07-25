@@ -2,5 +2,6 @@
 == References
 
 * [[[sigrok-fx2lafw]]] Sigrok. "Fx2lafw". Available at: https://sigrok.org/wiki/Fx2lafw [Accessed 5 July 2026].
+* [[[sipeed-longan-nano]]] Sipeed. "Longan Nano". Available at: https://wiki.sipeed.com/hardware/en/longan/Nano/Longan_nano.html [Accessed 5 July 2026].
 
 // https://github.com/raspberrypi/pico-examples

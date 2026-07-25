@@ -1,0 +1,96 @@
+# ----------------------------------------------------------------------
+# Simplified TM1638 module
+#
+# 5-pin header:
+#   VCC  GND  STB  CLK  DIO
+#
+# Pin pitch: 0.1 inch
+# ----------------------------------------------------------------------
+
+define pin { circle radius 0.025 fill 0xe0c060 at $1 }
+
+define led {
+  move to ($1,$2)
+  move left -0.04
+  circle radius 0.08 fill 0xff8080
+  text $3 small at last circle - (0,0.2) color white
+}
+
+define push_button {
+  move to ($1,$2)
+  move right -0.125
+  box width 0.25 height 0.25 rad 0.02 fill 0xAAAAAA
+  circle radius 0.07 at last box fill 0x303030
+  text $3 small at last circle + (0,0.2) color white
+}
+
+define tm1638 {
+
+# Main PCB
+TM1638: box width 3 height 2 rad 0.06 fill 0x2277ff thick
+
+# ----------------------------------------------------------------------
+# 8-digit seven-segment display
+# ----------------------------------------------------------------------
+
+DISPLAY: box width 1.75 height 0.38 rad 0.03 \
+    fill 0x202020 \
+    at TM1638.c + (0.25,0.13)
+
+text "8-digit 7-segment" \
+    at DISPLAY \
+    color white
+
+# ----------------------------------------------------------------------
+# TM1638 controller IC
+# ----------------------------------------------------------------------
+
+IC: box width 0.60 height 0.25 rad 0.01 fill 0x303030 at TM1638.c + (-0.80,-0.30)
+text "TM1638" at IC color white
+
+# ----------------------------------------------------------------------
+# LEDs Simplified representation of 8 indicator LEDs
+# ----------------------------------------------------------------------
+led( TM1638.nw.x + 0.5, TM1638.nw.y - 0.2, "LED1" )
+led( TM1638.nw.x + 0.8, TM1638.nw.y - 0.2, "LED2" )
+led( TM1638.nw.x + 1.1, TM1638.nw.y - 0.2, "LED3" )
+led( TM1638.nw.x + 1.4, TM1638.nw.y - 0.2, "LED4" )
+led( TM1638.nw.x + 1.7, TM1638.nw.y - 0.2, "LED5" )
+led( TM1638.nw.x + 2.0, TM1638.nw.y - 0.2, "LED6" )
+led( TM1638.nw.x + 2.3, TM1638.nw.y - 0.2, "LED7" )
+led( TM1638.nw.x + 2.6, TM1638.nw.y - 0.2, "LED8" )
+
+
+# ----------------------------------------------------------------------
+# Push buttons
+# Simplified representation of 8 keys
+# ----------------------------------------------------------------------
+push_button( TM1638.sw.x + 0.5, TM1638.sw.y + 0.2, "S1" )
+push_button( TM1638.sw.x + 0.8, TM1638.sw.y + 0.2, "S2" )
+push_button( TM1638.sw.x + 1.1, TM1638.sw.y + 0.2, "S3" )
+push_button( TM1638.sw.x + 1.4, TM1638.sw.y + 0.2, "S4" )
+push_button( TM1638.sw.x + 1.7, TM1638.sw.y + 0.2, "S5" )
+push_button( TM1638.sw.x + 2.0, TM1638.sw.y + 0.2, "S6" )
+push_button( TM1638.sw.x + 2.3, TM1638.sw.y + 0.2, "S7" )
+push_button( TM1638.sw.x + 2.6, TM1638.sw.y + 0.2, "S8" )
+
+
+# ----------------------------------------------------------------------
+# 5-pin header Exact 0.1" pitch
+# ----------------------------------------------------------------------
+VCC: pin(TM1638.w + (0.1,0.4))
+GND: pin(TM1638.w + (0.1,0.3))
+STB: pin(TM1638.w + (0.1,0.2))
+CLK: pin(TM1638.w + (0.1,0.1))
+DIO: pin(TM1638.w + (0.1,0.0))
+
+# Pin labels
+text "VCC" small at VCC.c + (0.15,0) color white
+text "GND" small at GND.c + (0.15,0) color white 
+text "STB" small at STB.c + (0.15,0) color white 
+text "CLK" small at CLK.c + (0.15,0) color white 
+text "DIO" small at DIO.c + (0.15,0) color white 
+
+}
+
+tm1638

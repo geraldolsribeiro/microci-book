@@ -14,9 +14,11 @@ The family used here includes:
 * Raspberry Pi Pico 2
 * Raspberry Pi Pico 2 W
 
-These boards are small, affordable, and widely available, which makes them a good fit for learning, teaching, and repeatable experiments.
+These boards are small, affordable, and widely available, which makes them a
+good fit for learning, teaching, and repeatable experiments.
 They also remain capable enough to support real embedded work.
-Depending on the model, Pico boards use either the *RP2040* or the newer *RP2350* microcontroller.
+Depending on the model, Pico boards use either the *RP2040* or the newer
+*RP2350* microcontroller.
 
 === Board capabilities
 
@@ -34,6 +36,8 @@ The book uses two closely related microcontrollers: the RP2040 and the RP2350.
 Both fit the Pico philosophy: small enough to learn quickly, capable enough to build useful firmware.
 This comparison highlights how the newer RP2350 extends the same design idea rather than replacing it.
 It is included here to show what changes matter when the platform moves forward.
+The RP2350 can run either ARM Cortex-M33 or RISC-V, depending on the board
+variant, which makes the Pico family relevant to the RISC discussion as well.
 
 .Raspberry Pi Pico chip identification
 image::RP2040_chip_id.png[pdfwidth=50%]
@@ -46,6 +50,7 @@ image::RP2040_chip_id.png[pdfwidth=50%]
 |Clock speed |133 MHz |150 MHz
 |Floating-point unit |None; floating point is handled in software |Dedicated hardware single and double-precision FPU
 |On-chip SRAM |264 KiB |520 KiB
+|QSPI on board |2MB|2MB|
 |PIO state machines |8 total |12 total
 |Security / boot |No secure-boot features |Secure boot, encrypted bootloader, OTP
 |GPIO pins |30 |30 to 48, depending on the package variant
@@ -82,3 +87,92 @@ image::../images/picow-pinout.svg[pdfwidth=90%]
 
 .The pinout and board layout diagram of a wireless Raspberry Pi Pico 2 board[106;5u
 image::../images/pico2w-pinout.svg[pdfwidth=90%]
+
+=== Input power
+
+There are 3 ways to power the Pico board:
+
+* USB Micro-B port with 5V±10% DC
+* VBUS Pin with 5V±10% DC
+* VSYS Pin in the range of 1.8V to 5.5V DC
+
+.Raspberry Pi Pico input power.
+image::../images/rpi-pico-input-power.svg[pdfwidth=50%]
+
+==== USB Input Power
+
+The micro-USB port can power the Pico board from a computer, wall adapter,
+battery, or other source that delivers 5V±10% DC. Since VBUS is directly
+connected to the USB port, it can provide the same voltage to external
+circuits. Likewise, VSYS can also be used to provide voltage to external
+circuits, but will be slightly lower with a 0.7V voltage drop across the
+Schottky diode (i.e., VSYS becomes VBUS minus the Schottky diode 0.7V voltage
+drop). If the micro-USB port is the only power source, VSYS and VBUS can be
+safely shorted together to eliminate the Schottky diode drop (which improves
+efficiency and reduces ripple on VSYS).
+
+==== VBUS Input Power
+
+The Pico board could be powered by providing 5V±10% DC to the VBUS pin (Pin
+40). This would internally power VSYS via the onboard Schottky diode with a
+drop of 0.7V, but you must not connect another power supply to the USB
+connector to avoid back-powering either source, especially when connecting to a
+computer for programming.
+
+Following VBUS in the schematic shows two resistors, R10 (5.6kΩ) and R1 (10kΩ),
+as a voltage divider that brings the voltage down from 5V to 3.2V for GPIO24.
+This allows GPIO24 to monitor if VBUS is on/off, while R10 and R1 act to pull
+VBUS down to make sure it is 0V if VBUS is not present.
+
+==== VSYS Input Power
+
+The VSYS pin is a better option than VBUS for powering the Pico by pins due to
+its wider input voltage range of 1.8V to 5.5V DC and makes use of the Schottky
+diode to prevent the USB/VBUS and VSYS from back-powering the other. VSYS is RC
+filtered and divided by 3 (by R5, R6 and C3 in the Pico schematic) and can be
+monitored on ADC channel 3. This can be used for example as a crude battery
+voltage monitor.
+
+=== Output power
+
+There are 3 pins on the Pico board that can provide 5V and 3.3V output power to
+external devices provided that the Pico is powered through the USB port.
+
+* VBUS Pin
+* VSYS Pin
+* 3V3 Pin
+
+.Raspberry Pi Pico output power.
+image::../images/rpi-pico-output-power.svg[pdfwidth=50%]
+
+
+==== VBUS Pin Output Power
+
+The VBUS pin is directly connected to the power line of the USB port, so the
+voltage and current output depends on the USB power source and the voltage drop
+across the USB cable. According to the USB 2.0 specs, the voltage ranges are
+different for low and high power buses:
+
+* **Low Power Bus:** The minimum voltage at the host port, hub port, and device
+  are specified to be at least 4.75V, 4.4V, and 4.35V respectively and up to a
+  maximum voltage of 5.25V with a max current rating of 100mA.
+* **High Power Bus:* The voltage range is 4.75V to 5.25V with a max current of
+  500mA.
+
+This is assuming that the manufacturer's design of USB power source is fully
+compliant with the USB specs (there are many products on the market that
+deviate from the specs).
+
+==== VSYS Pin Output Power
+
+The VSYS pin is connected to the power line of the USB port with an inline
+Schottky diode that has a voltage drop of 0.7V. The output voltage of VSYS is
+the USB voltage (VBUS) minus 0.7V across Schottky diode. The current rating of
+VSYS is the same as the USB current rating.
+
+==== 3V3 Pin Output Power
+
+The 3V3 pin outputs +3.3V from the Pico's internal SMPS regulator. The maximum
+output current will depend on RP2040 load and VSYS voltage and it is
+recommended to keep the load on this pin less than 300mA.
+

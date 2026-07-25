@@ -42,6 +42,8 @@ include::software-tools/content.adoc[]
 
 include::hardware/content.adoc[]
 
+include::risc/content.adoc[]
+
 include::proj_blink/content.adoc[]
 
 include::proj_tm1638_01/content.adoc[]

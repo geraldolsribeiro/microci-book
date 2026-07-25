@@ -1,0 +1,56 @@
+// Book Style Guide for this project.
+// Keep this file as the canonical editorial reference.
+// Update it when the voice, structure, or terminology changes.
+
+= Book Style Guide
+
+// The book is practical, technical, and aimed at readers who want to build
+// embedded software in a controlled, reproducible workflow.
+
+== Voice and tone
+
+// Keep this stable. If future chapters drift, edit the chapters to match this
+// guide rather than changing the whole book implicitly.
+
+- Audience: technically literate embedded developers
+- Tone: clear, direct, practical, calm
+- Point of view: mostly instructional and explanatory
+- Tense: present tense unless describing a past experiment or historical fact
+
+== Writing rules
+
+- Prefer short paragraphs.
+- Prefer concrete examples after abstract ideas.
+- Explain why a concept matters before diving into implementation.
+- Do not repeat the same explanation in multiple chapters if a cross-reference is enough.
+- Keep section headings descriptive.
+- Avoid marketing language.
+- Avoid unnecessary jargon.
+
+== Technical rules
+
+- Do not invent hardware behavior or API details.
+- If a detail is uncertain, flag it instead of guessing.
+- Keep code listings minimal and purposeful.
+- Use the same term for the same concept throughout the book.
+- For images, use AsciiDoc dot-caption syntax with no space after the dot, e.g. `.Caption text` on the line above `image::...[]`.
+
+== Structure rules
+
+// These rules help Pi refactor chapters consistently.
+
+- Start with context, then explanation, then example.
+- Use transitions between sections.
+- Split sections when they cover independent ideas.
+- Merge sections when they repeat the same setup.
+- Update cross-references after renaming headings.
+
+== Maintenance rules
+
+// This is the most important part for future updates.
+
+- Update `outline.adoc` when chapter order or headings change.
+- Update `glossary.adoc` when introducing a recurring term.
+- Update `changelog.adoc` for meaningful editorial changes.
+- Review adjacent chapters after a structural refactor.
+- Keep terminology decisions explicit rather than implicit.

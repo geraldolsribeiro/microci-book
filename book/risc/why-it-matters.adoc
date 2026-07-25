@@ -1,0 +1,9 @@
+=== Why RISC matters here
+
+This book uses RISC as a bridge between architecture and real firmware work.
+Once the reader understands the basic idea, it becomes easier to understand why
+some microcontrollers feel compact and direct, while others trade simplicity for
+more integrated features.
+
+That perspective helps when comparing boards, reading datasheets, and thinking
+about toolchains or performance constraints.

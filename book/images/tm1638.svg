@@ -1,0 +1,58 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 436.32 292.32">
+<path d="M10,290L425,290A8 8 0 0 0 434 281L434,10A8 8 0 0 0 425 2L10,2A8 8 0 0 0 2 10L2,281A8 8 0 0 0 10 290Z"  style="fill:rgb(34,119,255);stroke-width:3.24;stroke:rgb(0,0,0);" />
+<path d="M132,154L375,154A4 4 0 0 0 380 150L380,104A4 4 0 0 0 375 100L132,100A4 4 0 0 0 128 104L128,150A4 4 0 0 0 132 154Z"  style="fill:rgb(32,32,32);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="254" y="127" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">8-digit 7-segment</text>
+<path d="M61,207L144,207A1 1 0 0 0 146 205L146,172A1 1 0 0 0 144 171L61,171A1 1 0 0 0 59 172L59,205A1 1 0 0 0 61 207Z"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="102" y="189" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">TM1638</text>
+<circle cx="70" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="70" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED1</text>
+<circle cx="114" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="114" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED2</text>
+<circle cx="157" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="157" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED3</text>
+<circle cx="200" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="200" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED4</text>
+<circle cx="243" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="243" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED5</text>
+<circle cx="286" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="286" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED6</text>
+<circle cx="330" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="330" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED7</text>
+<circle cx="373" cy="33" r="11.52"  style="fill:rgb(255,128,128);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="373" y="62" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">LED8</text>
+<path d="M61,276L91,276A2 2 0 0 0 94 273L94,243A2 2 0 0 0 91 240L61,240A2 2 0 0 0 58 243L58,273A2 2 0 0 0 61 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="76" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="76" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S1</text>
+<path d="M104,276L135,276A2 2 0 0 0 137 273L137,243A2 2 0 0 0 135 240L104,240A2 2 0 0 0 101 243L101,273A2 2 0 0 0 104 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="119" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="119" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S2</text>
+<path d="M147,276L178,276A2 2 0 0 0 181 273L181,243A2 2 0 0 0 178 240L147,240A2 2 0 0 0 145 243L145,273A2 2 0 0 0 147 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="163" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="163" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S3</text>
+<path d="M191,276L221,276A2 2 0 0 0 224 273L224,243A2 2 0 0 0 221 240L191,240A2 2 0 0 0 188 243L188,273A2 2 0 0 0 191 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="206" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="206" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S4</text>
+<path d="M234,276L264,276A2 2 0 0 0 267 273L267,243A2 2 0 0 0 264 240L234,240A2 2 0 0 0 231 243L231,273A2 2 0 0 0 234 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="249" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="249" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S5</text>
+<path d="M277,276L307,276A2 2 0 0 0 310 273L310,243A2 2 0 0 0 307 240L277,240A2 2 0 0 0 274 243L274,273A2 2 0 0 0 277 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="292" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="292" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S6</text>
+<path d="M320,276L351,276A2 2 0 0 0 353 273L353,243A2 2 0 0 0 351 240L320,240A2 2 0 0 0 317 243L317,273A2 2 0 0 0 320 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="335" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="335" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S7</text>
+<path d="M363,276L394,276A2 2 0 0 0 397 273L397,243A2 2 0 0 0 394 240L363,240A2 2 0 0 0 361 243L361,273A2 2 0 0 0 363 276Z"  style="fill:rgb(170,170,170);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="379" cy="258" r="10.08"  style="fill:rgb(48,48,48);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="379" y="230" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">S8</text>
+<circle cx="16" cy="88" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="16" cy="102" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="16" cy="117" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="16" cy="131" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="16" cy="146" r="3.6"  style="fill:rgb(224,192,96);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="38" y="88" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">VCC</text>
+<text x="38" y="102" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">GND</text>
+<text x="38" y="117" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">STB</text>
+<text x="38" y="131" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">CLK</text>
+<text x="38" y="146" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">DIO</text>
+</svg>
+
