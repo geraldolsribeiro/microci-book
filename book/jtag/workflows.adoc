@@ -1,0 +1,47 @@
+[[jtag-workflows]]
+=== Professional workflows
+
+JTAG becomes most valuable when it is part of a repeatable process rather than a
+one-off rescue technique.
+
+==== Development workflow
+
+During development, JTAG is used to:
+
+* verify the board can be accessed
+* flash test firmware
+* debug boot problems
+* inspect memory-mapped peripherals
+* recover from broken images
+
+==== Bring-up workflow
+
+During bring-up, JTAG often provides the first reliable visibility into a new
+board. It can help separate hardware faults from firmware faults.
+
+==== Manufacturing workflow
+
+In manufacturing, JTAG can support:
+
+* programming blank devices
+* verifying connectivity
+* identifying assembly issues
+* checking that the correct part is installed
+
+==== CI integration with microCI
+
+In a microCI-driven workflow, JTAG operations can be scripted as explicit build
+or validation steps. That is useful when you want board access to be part of a
+repeatable local pipeline rather than an ad hoc manual action.
+
+A CI-oriented JTAG step may:
+
+* erase and program a test image
+* reset the target
+* read back device identity
+* collect logs from a debug session
+* verify a board-specific self-test
+
+The important point is reproducibility. If a JTAG action matters to the
+engineering process, it should be described, versioned, and automated where
+possible.

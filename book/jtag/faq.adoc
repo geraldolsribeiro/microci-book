@@ -1,0 +1,29 @@
+[[jtag-faq]]
+=== Frequently asked questions
+
+==== When should I use JTAG over DFU?
+
+Use JTAG when you need deeper access, board-level recovery, or hardware test.
+Use DFU when you want a simpler firmware update path and the device already
+supports it well.
+
+==== What benefits can JTAG achieve?
+
+JTAG can reduce bring-up time, improve fault isolation, enable recovery from bad
+firmware, and support manufacturing tests.
+
+==== Is JTAG only for debugging?
+
+No. JTAG is also used for programming, identification, boundary scan, and
+production test.
+
+==== Why is JTAG sometimes disabled in production?
+
+Because unrestricted debug access can create security, safety, or support risks.
+Some products disable or restrict JTAG after manufacturing.
+
+==== What if the board exposes only part of the JTAG interface?
+
+That is common. Some boards expose only the pins they need, or replace JTAG with
+SWD. The useful question is not whether every pin is present, but whether the
+available access supports the required workflow.

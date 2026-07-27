@@ -1,0 +1,16 @@
+[[jtag-summary]]
+=== Summary
+
+JTAG is a standardized way to access a chip through a small set of pins for
+programming, debugging, identification, and boundary-scan testing.
+
+The key ideas are:
+
+* the TAP controller moves data through instruction and data paths
+* boundary scan allows pin-level visibility without physical probing
+* flashing and debugging are related but different tasks
+* JTAG is powerful when board access, recovery, or test coverage matters
+* Linux has mature open-source tooling for practical JTAG workflows
+
+In the next chapter, this foundation can be applied to a concrete use case and
+a complete workflow.

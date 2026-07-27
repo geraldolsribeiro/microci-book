@@ -1,0 +1,14 @@
+=== Basic platform concepts
+
+A RISC platform is more than a CPU core.
+It usually means the processor architecture, the board or module it lives on,
+the memory layout, the startup code, the peripheral set, and the toolchain used
+to build firmware for it.
+
+For embedded work, the platform matters because the same instruction set can
+appear in very different products.
+A simple microcontroller board, a Linux-capable system, and a higher-end SoC may
+all use RISC-style processors, but they solve different problems.
+
+That is why this chapter focuses on the platform as a whole instead of the
+instruction set alone.

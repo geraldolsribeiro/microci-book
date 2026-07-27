@@ -1,0 +1,29 @@
+[[jtag-hardware]]
+=== Typical hardware and probes
+
+The protocol is the same, but the probe hardware affects speed, convenience, and
+supported features.
+
+.Common probe classes.
+[cols="1,3,3",options="header"]
+|===
+|Probe class |Notes |Caution
+|FT2232H-based adapters |Flexible and often well supported by open-source tools |Quality varies widely by vendor implementation
+|J-Link |Widely used commercial probe with strong feature support |Vendor software and licensing may affect workflow choices
+|ST-Link |Common for STM32 development and debugging |Feature set depends on model and target family
+|CMSIS-DAP probes |Open interface class supported by many tools |Capabilities differ by probe implementation
+|Raspberry Pi as adapter |Can be useful in limited lab scenarios |Not a general replacement for a real debug probe
+|===
+
+==== Practical caveats
+
+JTAG is electrical as much as it is logical. Pay attention to:
+
+* voltage levels
+* signal integrity
+* cable length
+* target power sequencing
+* reset behavior
+
+A correct protocol setup cannot compensate for poor wiring or incompatible logic
+levels.

@@ -1,0 +1,49 @@
+[[jtag-introduction]]
+=== Introduction to JTAG
+
+JTAG is the common name for a family of test and debug interfaces defined by
+IEEE 1149.1. In embedded systems, it is used to access a chip through a small
+set of dedicated pins, usually for programming, debugging, and boundary-scan
+testing.
+
+The name originally came from the *Joint Test Action Group*, the industry group
+that developed the standard. Today, engineers usually use "JTAG" to mean both
+the standard itself and the physical interface built around it.
+
+JTAG matters because it gives direct access to a device even when the firmware
+is broken, the bootloader is missing, or the normal communication interface is
+not working. That makes it one of the most important tools in bring-up,
+validation, and manufacturing.
+
+=== Why JTAG exists
+
+Digital hardware became more complex than manual probing could reliably test.
+As pin counts increased and packages became smaller, the industry needed a
+repeatable way to verify interconnects, identify devices, and control chips
+without relying on the system software.
+
+JTAG solved that problem by adding a standardized access path built into the
+silicon.
+
+=== IEEE 1149.1 and boundary scan
+
+IEEE 1149.1 defines the TAP, the scan architecture, and boundary scan.
+Boundary scan means that a device can shift test data through logic that is
+connected to its pins. This allows the engineer to observe and drive pins
+without physically touching them.
+
+That capability is especially useful when boards contain fine-pitch parts,
+BGA packages, or many interconnected devices.
+
+=== Why every embedded engineer should know JTAG
+
+Even if you do not use JTAG every day, you need to understand it because it
+appears in at least four places:
+
+* early board bring-up
+* firmware flashing and recovery
+* debug of low-level code
+* manufacturing and test workflows
+
+A board may work perfectly over USB or UART and still fail to boot. JTAG is the
+tool that often remains available when everything else is uncertain.

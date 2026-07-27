@@ -1,0 +1,44 @@
+[[jtag-debugging]]
+=== JTAG for debugging
+
+Debugging over JTAG is one of its most valuable uses, but it is easy to confuse
+with flashing.
+
+==== Flashing versus debugging
+
+Flashing is a write operation. It programs non-volatile memory so the target can
+boot later.
+
+Debugging is an interactive control session. The probe may halt execution,
+inspect state, step instructions, and resume execution.
+
+The same physical interface can support both, but they are not the same task.
+
+==== Common debug features
+
+Depending on the chip and probe, JTAG debugging may support:
+
+* halt and resume
+* single-step execution
+* hardware breakpoints
+* watchpoints
+* register inspection
+* memory inspection
+* peripheral register access
+* flash loading from the debugger
+
+Not every target supports all of these features equally.
+
+==== RTOS awareness
+
+Some debug stacks can interpret RTOS state and show tasks, queues, or threads in
+a more human-readable way. That is not part of JTAG itself; it is a higher-level
+feature built on top of debug access.
+
+==== Semihosting and trace
+
+Semihosting and trace can improve visibility during development, but they are
+platform-dependent and often slow or intrusive.
+
+Use them as supporting tools, not as a substitute for robust logging and
+instrumentation.

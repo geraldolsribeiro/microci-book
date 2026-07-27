@@ -1,0 +1,105 @@
+[[jtag-fundamentals]]
+=== JTAG fundamentals
+
+==== The basic signals
+
+A JTAG interface is built around a small set of signals:
+
+[cols="1,4",options="header"]
+|===
+|Signal |Meaning
+|TCK |Test clock. Drives the JTAG state machine.
+|TMS |Test mode select. Controls state transitions.
+|TDI |Test data in. Serial input to the TAP.
+|TDO |Test data out. Serial output from the TAP.
+|TRST |Optional test reset. Resets the TAP controller when supported.
+|nSRST / nRESET |Not part of JTAG itself, but often carried alongside it for system reset.
+|===
+
+The exact pinout depends on the target and probe, but the logical roles are the
+same.
+
+==== The TAP controller
+
+At the heart of JTAG is the *Test Access Port* (TAP). The TAP controller is a
+finite state machine that uses TCK and TMS to move between instruction and data
+paths.
+
+The TAP is not the CPU. It is a small access controller inside the chip that
+routes serial data to internal registers.
+
+.TAP controller overview.
+[listing]
+----
+              +----------------------+
+              |   Test-Logic-Reset   |
+              +----------+-----------+
+                         |
+                         v
+                  +------+------+
+                  | Run-Test/   |
+                  | Idle        |
+                  +------+------+ 
+                         |
+            +------------+------------+
+            |                         |
+            v                         v
+    Instruction path            Data path
+    (IR capture/shift/update)   (DR capture/shift/update)
+----
+
+The full state machine has more states than shown above, but the key idea is
+simple: TMS and TCK move the TAP between reset, instruction handling, and data
+handling states.
+
+==== Instruction register and data registers
+
+JTAG distinguishes between the *Instruction Register* (IR) and one or more
+*Data Registers* (DRs).
+
+* The IR selects what the TAP should do next.
+* The DR carries the actual data for that selected operation.
+
+Typical DRs include:
+
+* boundary scan register
+* device identification register
+* debug access registers
+* vendor-specific registers
+
+This structure is what makes JTAG flexible. The same physical pins can support
+multiple functions.
+
+==== Boundary scan register
+
+The boundary scan register is a chain of cells connected to device pins. Each
+cell can capture input values or drive output values during test operations.
+
+.Logical view of a boundary-scan chain.
+[listing]
+----
+TDI -> [Device A IR/DR] -> [Device B IR/DR] -> [Device C IR/DR] -> TDO
+          |                 |                 |
+          v                 v                 v
+      pin cells         pin cells         pin cells
+----
+
+In a board-level chain, multiple devices are often connected in series. A probe
+shifts data into the first device, then through each device in turn, until it
+reaches TDO.
+
+This is why JTAG can be used to identify a board topology, detect missing
+connections, and sometimes isolate manufacturing faults.
+
+==== Device identification
+
+Many devices expose an identification register, often called IDCODE. It lets the
+probe determine which chips are present and whether the scan chain looks as
+expected.
+
+In practice, this helps answer questions such as:
+
+* Is the target powered?
+* Are the JTAG pins connected correctly?
+* Is the scan chain ordered as expected?
+* Is the selected device actually present?

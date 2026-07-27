@@ -1,0 +1,65 @@
+[[jtag-vs-others]]
+=== JTAG versus other interfaces
+
+No single access method is best in every situation. The right choice depends on
+design stage, access constraints, speed, and what the target must support.
+
+.Comparison of common device-access methods.
+[cols="1,2,2,2",options="header"]
+|===
+|Method |Strengths |Limitations |Typical use
+|JTAG |Powerful debug, scan access, recovery, board test |More pins, more setup, hardware access required |Bring-up, debug, manufacturing
+|DFU |Simple firmware update over USB |Usually limited to supported bootloader paths |End-user or service updates
+|UART bootloader |Cheap, easy, widely understood |Slower, often feature-limited |Low-cost update and recovery
+|SWD |Fewer pins than JTAG, strong debug support |ARM-focused, not a general JTAG replacement |ARM debug and flashing
+|ISP |Simple in-circuit programming for some parts |Highly device-specific |MCU programming in production
+|===
+
+==== JTAG versus DFU
+
+Use DFU when the device already provides a USB bootloader and the workflow is
+meant to be simple for end users or service personnel.
+
+Use JTAG when you need deeper access, board-level test capability, or a way to
+recover a device before the application firmware is functional.
+
+In short: DFU is often about convenience; JTAG is often about control.
+
+==== JTAG versus UART bootloaders
+
+UART bootloaders are common and useful, especially on low-cost systems. They are
+often easier to expose in a minimal product, but they typically depend on the
+bootloader itself being alive.
+
+JTAG can reach the target even when the bootloader is damaged or absent.
+
+==== JTAG versus SWD
+
+Serial Wire Debug (SWD) is a two-wire debug protocol used mainly with ARM
+microcontrollers. It is closely related to JTAG in purpose, but it uses fewer
+pins and a simpler physical interface.
+
+When a chip offers both, SWD is often preferred for compact ARM designs. JTAG
+remains important when the device family, board test strategy, or tooling
+depends on the full JTAG feature set.
+
+==== JTAG versus ISP
+
+ISP usually means in-system programming through a vendor-specific interface or
+boot path. It is often simple and efficient for a specific chip family, but it
+is rarely as general as JTAG.
+
+JTAG is more standardized across devices, while ISP is often more convenient
+inside a single ecosystem.
+
+[[jtag-decision]]
+=== How to choose
+
+A practical rule is:
+
+* choose DFU or UART bootloaders for simple update workflows
+* choose SWD for compact ARM debug if the device supports it well
+* choose JTAG when you need broad access, board test, or robust recovery
+
+JTAG is usually the better choice when the question is "Can I access the chip
+at all?" rather than "Can I ship a user-friendly update path?"

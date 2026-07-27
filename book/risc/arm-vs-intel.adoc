@@ -1,0 +1,28 @@
+=== RISC compared with ARM and Intel
+
+RISC is a design approach, while ARM and Intel are names you are more likely to
+see as ecosystems or instruction-set families in real products.
+
+ARM systems are commonly found in embedded devices and mobile hardware.
+They are often efficient, well-supported, and practical for firmware where power
+use and peripheral integration matter.
+RISC-V is newer as a public instruction-set standard and is attractive because
+it is open, modular, and easy to study.
+
+Intel x86 systems are usually associated with PCs, servers, and heavier desktop
+software.
+They are powerful, but they also tend to bring more complexity than most small
+embedded projects need.
+
+For embedded readers, the main difference is not just speed.
+It is the shape of the ecosystem:
+
+[cols="1,3,3",options="header"]
+|===
+|Family |Typical strengths |Typical fit
+|ARM |Mature embedded ecosystem, strong vendor support, many boards |Most embedded and mobile-style devices
+|RISC-V |Open standard, modular design, easy to study and extend |Learning, new designs, and open hardware work
+|Intel x86 |Broad compatibility, large software ecosystem |PCs, servers, and general-purpose computing
+|===
+
+The right choice depends on the project, not the slogan.

@@ -42,13 +42,13 @@ include::software-tools/content.adoc[]
 
 include::hardware/content.adoc[]
 
+include::jtag/content.adoc[]
+
 include::risc/content.adoc[]
 
 include::proj_blink/content.adoc[]
 
 include::proj_tm1638_01/content.adoc[]
-
-// include::getting-started-with-firmware/content.adoc[]
 
 include::communication-protocols/content.adoc[]
 

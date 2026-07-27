@@ -1,0 +1,59 @@
+[[jtag-tools]]
+=== Open-source Linux tooling
+
+A Linux workflow for JTAG usually combines a probe, a server layer, and a
+debugger.
+
+==== OpenOCD
+
+OpenOCD is one of the most common open-source JTAG and SWD server tools. It can
+configure the probe, talk to the target, load firmware, and expose a GDB
+server.
+
+==== GDB and gdb-multiarch
+
+GDB is the debugger most often used with JTAG in Linux-based workflows.
+
+gdb-multiarch is useful when the same host must debug different CPU families
+without installing a separate debugger for each one.
+
+==== probe-rs
+
+probe-rs is an open-source debugging and flashing stack with strong support for
+modern Rust-based embedded workflows and a growing ecosystem around ARM targets.
+
+==== pyOCD
+
+pyOCD is commonly used with CMSIS-DAP style probes and ARM targets. It provides
+programming and debug support through a Python-based toolchain.
+
+==== urJTAG
+
+urJTAG is a JTAG utility focused on low-level scan-chain access and board
+inspection. It is especially relevant when you want to inspect the JTAG chain
+directly.
+
+==== flashrom
+
+flashrom is not a general JTAG debugger, but it can be relevant in workflows
+that involve programming flash devices through supported programmers or board
+paths.
+
+==== CMSIS-DAP
+
+CMSIS-DAP is a probe protocol and interface class, not a single tool. Many
+open-source workflows use CMSIS-DAP compatible probes with OpenOCD, pyOCD, or
+other host tools.
+
+==== Typical Linux workflow
+
+A common flow looks like this:
+
+. connect the probe to the target
+. confirm the scan chain or device ID
+. load firmware or attach a debugger
+. inspect state or flash the image
+. reset and run the target
+
+That sequence can be scripted and repeated, which is why JTAG fits well into
+reproducible workflows.

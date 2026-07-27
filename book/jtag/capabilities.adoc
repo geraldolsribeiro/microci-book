@@ -1,0 +1,52 @@
+[[jtag-capabilities]]
+=== What JTAG can do
+
+JTAG is not a single-purpose interface. It is a transport for several kinds of
+access.
+
+==== Programming and flashing
+
+Some chips allow their internal flash or configuration memory to be programmed
+through JTAG. In this mode, the probe writes image data into the target using
+debug or vendor-specific access paths.
+
+This is useful for:
+
+* initial provisioning
+* board recovery
+* low-level factory programming
+* development when no bootloader is available
+
+==== Debugging
+
+JTAG can also halt the CPU, inspect registers, read and write memory, and set
+breakpoints and watchpoints on supported targets.
+
+This is fundamentally different from flashing. Flashing changes persistent
+firmware contents. Debugging controls a running system temporarily.
+
+==== Boundary-scan testing
+
+Boundary scan is especially valuable in manufacturing because it can test board
+interconnects without running application firmware.
+
+It can help detect:
+
+* opens and shorts between pins
+* swapped nets
+* missing components
+* soldering defects
+
+==== Identification and validation
+
+JTAG can help confirm that the expected devices are present and wired in the
+expected order. That makes it useful during bring-up and acceptance testing.
+
+==== Production and manufacturing use
+
+In production, JTAG is often used for:
+
+* blank device programming
+* board verification
+* serial-number or key provisioning, where appropriate
+* failure analysis and rework support

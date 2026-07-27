@@ -2,6 +2,12 @@
 
 include::overview.adoc[]
 
+include::platform-basics.adoc[]
+
+include::arm-vs-intel.adoc[]
+
+include::best-use.adoc[]
+
 include::why-it-matters.adoc[]
 
 include::longan-nano.adoc[]

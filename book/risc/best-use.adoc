@@ -1,0 +1,19 @@
+=== Where RISC is a good fit
+
+RISC-style systems are often a strong fit when the goal is simplicity,
+predictable behavior, and a clear path from code to hardware.
+They are especially useful for:
+
+* learning architecture concepts
+* embedded firmware
+* low-power or resource-aware devices
+* boards with a clean toolchain story
+* projects that benefit from a readable, open platform model
+
+They are usually a weaker fit when a project depends on a large commercial
+software stack that already assumes x86, or when the workload is tied to a
+specific vendor ecosystem.
+
+In this book, RISC is not presented as a universal winner.
+It is presented as a practical way to understand how processor choice affects
+the rest of the development workflow.

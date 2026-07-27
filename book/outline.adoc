@@ -20,6 +20,7 @@
 
 == Concepts and conventions
 - Communication Protocols
+- JTAG
 - Code and Listing Conventions
 - Naming Conventions
 - Toolchain

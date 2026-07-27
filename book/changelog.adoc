@@ -3,6 +3,10 @@
 
 = Changelog
 
+== 2026-07-27
+- Added a new generic JTAG chapter draft with diagrams, comparisons, Linux tooling notes, and microCI workflow context.
+- Updated the outline to include JTAG under Concepts and conventions.
+
 == Unreleased
 
 - Added book-writing workflow files for Pi.
